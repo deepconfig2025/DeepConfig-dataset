@@ -1,0 +1,61 @@
+global_config:
+  bgp_as_number: 100
+  isis_process_id: 1
+  isis_level: "level-1"
+  net_entity: "10.0000.0000.0001.00"
+
+vpn_services:
+  - vpn_name: "vpna"
+    rd_value: "100:1"
+    rt_value: "1:1"
+    vpn_type: "l3evpn"
+    transport: "srv6-be"
+
+devices:
+  - name: "P1"
+    role: "P"
+
+    bgp_router_id: "3.3.3.1"
+
+    loopback_ipv6_address: "2001:DB8:FF::1"
+    loopback_ipv6_prefix: 128
+
+    core_interface_name: "GigabitEthernet1/0/0"
+    core_interface_ipv6_address: "2001:DB8:20::1"
+    core_interface_ipv6_prefix: 64
+
+  - name: "P2"
+    role: "P"
+
+    bgp_router_id: "3.3.3.2"
+
+    loopback_ipv6_address: "2001:DB8:FF::2"
+    loopback_ipv6_prefix: 128
+
+    core_interface_name: "GigabitEthernet1/0/0"
+    core_interface_ipv6_address: "2001:DB8:20::2"
+    core_interface_ipv6_prefix: 64
+
+  - name: "P3"
+    role: "P"
+
+    bgp_router_id: "3.3.3.3"
+
+    loopback_ipv6_address: "2001:DB8:FF::3"
+    loopback_ipv6_prefix: 128
+
+    core_interface_name: "GigabitEthernet1/0/0"
+    core_interface_ipv6_address: "2001:DB8:20::3"
+    core_interface_ipv6_prefix: 64
+
+  - name: "P4"
+    role: "P"
+
+    bgp_router_id: "3.3.3.4"
+
+    loopback_ipv6_address: "2001:DB8:FF::4"
+    loopback_ipv6_prefix: 128
+
+    core_interface_name: "GigabitEthernet1/0/0"
+    core_interface_ipv6_address: "2001:DB8:20::4"
+    core_interface_ipv6_prefix: 64

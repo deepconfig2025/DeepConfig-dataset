@@ -1,0 +1,673 @@
+global_config:
+  bgp_as_number: 100
+  isis_process_id: 1
+  isis_level: "level-1"
+  net_entity: "10.0000.0000.0001.00"
+
+vpn_services:
+  - vpn_name: "vpna"
+    rd_value: "100:1"
+    rt_value: "1:1"
+    vpn_type: "l3evpn"
+    transport: "srv6-be"
+
+devices:
+  - name: "CE1"
+    role: "CE"
+
+    bgp_router_id: "2.2.2.1"
+
+    wan_interface_name: "GigabitEthernet0/0/0"
+    wan_interface_ipv4_address: "10.11.1.2"
+    wan_interface_ipv4_prefix: 24
+
+    pe_peer_address: "10.11.1.1"
+    pe_as_number: 100
+
+  - name: "CE2"
+    role: "CE"
+
+    bgp_router_id: "2.2.2.2"
+
+    wan_interface_name: "GigabitEthernet0/0/0"
+    wan_interface_ipv4_address: "10.11.2.2"
+    wan_interface_ipv4_prefix: 24
+
+    pe_peer_address: "10.11.2.1"
+    pe_as_number: 100
+
+  - name: "CE3"
+    role: "CE"
+
+    bgp_router_id: "2.2.2.3"
+
+    wan_interface_name: "GigabitEthernet0/0/0"
+    wan_interface_ipv4_address: "10.11.3.2"
+    wan_interface_ipv4_prefix: 24
+
+    pe_peer_address: "10.11.3.1"
+    pe_as_number: 100
+
+  - name: "CE4"
+    role: "CE"
+
+    bgp_router_id: "2.2.2.4"
+
+    wan_interface_name: "GigabitEthernet0/0/0"
+    wan_interface_ipv4_address: "10.11.4.2"
+    wan_interface_ipv4_prefix: 24
+
+    pe_peer_address: "10.11.4.1"
+    pe_as_number: 100
+
+  - name: "CE5"
+    role: "CE"
+
+    bgp_router_id: "2.2.2.5"
+
+    wan_interface_name: "GigabitEthernet0/0/0"
+    wan_interface_ipv4_address: "10.11.5.2"
+    wan_interface_ipv4_prefix: 24
+
+    pe_peer_address: "10.11.5.1"
+    pe_as_number: 100
+
+  - name: "CE6"
+    role: "CE"
+
+    bgp_router_id: "2.2.2.6"
+
+    wan_interface_name: "GigabitEthernet0/0/0"
+    wan_interface_ipv4_address: "10.11.6.2"
+    wan_interface_ipv4_prefix: 24
+
+    pe_peer_address: "10.11.6.1"
+    pe_as_number: 100
+
+  - name: "CE7"
+    role: "CE"
+
+    bgp_router_id: "2.2.2.7"
+
+    wan_interface_name: "GigabitEthernet0/0/0"
+    wan_interface_ipv4_address: "10.11.7.2"
+    wan_interface_ipv4_prefix: 24
+
+    pe_peer_address: "10.11.7.1"
+    pe_as_number: 100
+
+  - name: "CE8"
+    role: "CE"
+
+    bgp_router_id: "2.2.2.8"
+
+    wan_interface_name: "GigabitEthernet0/0/0"
+    wan_interface_ipv4_address: "10.11.8.2"
+    wan_interface_ipv4_prefix: 24
+
+    pe_peer_address: "10.11.8.1"
+    pe_as_number: 100
+
+  - name: "CE9"
+    role: "CE"
+
+    bgp_router_id: "2.2.2.9"
+
+    wan_interface_name: "GigabitEthernet0/0/0"
+    wan_interface_ipv4_address: "10.11.9.2"
+    wan_interface_ipv4_prefix: 24
+
+    pe_peer_address: "10.11.9.1"
+    pe_as_number: 100
+
+  - name: "CE10"
+    role: "CE"
+
+    bgp_router_id: "2.2.2.10"
+
+    wan_interface_name: "GigabitEthernet0/0/0"
+    wan_interface_ipv4_address: "10.11.10.2"
+    wan_interface_ipv4_prefix: 24
+
+    pe_peer_address: "10.11.10.1"
+    pe_as_number: 100
+
+  - name: "CE11"
+    role: "CE"
+
+    bgp_router_id: "2.2.2.11"
+
+    wan_interface_name: "GigabitEthernet0/0/0"
+    wan_interface_ipv4_address: "10.11.11.2"
+    wan_interface_ipv4_prefix: 24
+
+    pe_peer_address: "10.11.11.1"
+    pe_as_number: 100
+
+  - name: "CE12"
+    role: "CE"
+
+    bgp_router_id: "2.2.2.12"
+
+    wan_interface_name: "GigabitEthernet0/0/0"
+    wan_interface_ipv4_address: "10.11.12.2"
+    wan_interface_ipv4_prefix: 24
+
+    pe_peer_address: "10.11.12.1"
+    pe_as_number: 100
+
+  - name: "CE13"
+    role: "CE"
+
+    bgp_router_id: "2.2.2.13"
+
+    wan_interface_name: "GigabitEthernet0/0/0"
+    wan_interface_ipv4_address: "10.11.13.2"
+    wan_interface_ipv4_prefix: 24
+
+    pe_peer_address: "10.11.13.1"
+    pe_as_number: 100
+
+  - name: "CE14"
+    role: "CE"
+
+    bgp_router_id: "2.2.2.14"
+
+    wan_interface_name: "GigabitEthernet0/0/0"
+    wan_interface_ipv4_address: "10.11.14.2"
+    wan_interface_ipv4_prefix: 24
+
+    pe_peer_address: "10.11.14.1"
+    pe_as_number: 100
+
+  - name: "CE15"
+    role: "CE"
+
+    bgp_router_id: "2.2.2.15"
+
+    wan_interface_name: "GigabitEthernet0/0/0"
+    wan_interface_ipv4_address: "10.11.15.2"
+    wan_interface_ipv4_prefix: 24
+
+    pe_peer_address: "10.11.15.1"
+    pe_as_number: 100
+
+  - name: "CE16"
+    role: "CE"
+
+    bgp_router_id: "2.2.2.16"
+
+    wan_interface_name: "GigabitEthernet0/0/0"
+    wan_interface_ipv4_address: "10.11.16.2"
+    wan_interface_ipv4_prefix: 24
+
+    pe_peer_address: "10.11.16.1"
+    pe_as_number: 100
+
+  - name: "CE17"
+    role: "CE"
+
+    bgp_router_id: "2.2.2.17"
+
+    wan_interface_name: "GigabitEthernet0/0/0"
+    wan_interface_ipv4_address: "10.11.17.2"
+    wan_interface_ipv4_prefix: 24
+
+    pe_peer_address: "10.11.17.1"
+    pe_as_number: 100
+
+  - name: "CE18"
+    role: "CE"
+
+    bgp_router_id: "2.2.2.18"
+
+    wan_interface_name: "GigabitEthernet0/0/0"
+    wan_interface_ipv4_address: "10.11.18.2"
+    wan_interface_ipv4_prefix: 24
+
+    pe_peer_address: "10.11.18.1"
+    pe_as_number: 100
+
+  - name: "CE19"
+    role: "CE"
+
+    bgp_router_id: "2.2.2.19"
+
+    wan_interface_name: "GigabitEthernet0/0/0"
+    wan_interface_ipv4_address: "10.11.19.2"
+    wan_interface_ipv4_prefix: 24
+
+    pe_peer_address: "10.11.19.1"
+    pe_as_number: 100
+
+  - name: "CE20"
+    role: "CE"
+
+    bgp_router_id: "2.2.2.20"
+
+    wan_interface_name: "GigabitEthernet0/0/0"
+    wan_interface_ipv4_address: "10.11.20.2"
+    wan_interface_ipv4_prefix: 24
+
+    pe_peer_address: "10.11.20.1"
+    pe_as_number: 100
+
+  - name: "CE21"
+    role: "CE"
+
+    bgp_router_id: "2.2.2.21"
+
+    wan_interface_name: "GigabitEthernet0/0/0"
+    wan_interface_ipv4_address: "10.11.21.2"
+    wan_interface_ipv4_prefix: 24
+
+    pe_peer_address: "10.11.21.1"
+    pe_as_number: 100
+
+  - name: "CE22"
+    role: "CE"
+
+    bgp_router_id: "2.2.2.22"
+
+    wan_interface_name: "GigabitEthernet0/0/0"
+    wan_interface_ipv4_address: "10.11.22.2"
+    wan_interface_ipv4_prefix: 24
+
+    pe_peer_address: "10.11.22.1"
+    pe_as_number: 100
+
+  - name: "CE23"
+    role: "CE"
+
+    bgp_router_id: "2.2.2.23"
+
+    wan_interface_name: "GigabitEthernet0/0/0"
+    wan_interface_ipv4_address: "10.11.23.2"
+    wan_interface_ipv4_prefix: 24
+
+    pe_peer_address: "10.11.23.1"
+    pe_as_number: 100
+
+  - name: "CE24"
+    role: "CE"
+
+    bgp_router_id: "2.2.2.24"
+
+    wan_interface_name: "GigabitEthernet0/0/0"
+    wan_interface_ipv4_address: "10.11.24.2"
+    wan_interface_ipv4_prefix: 24
+
+    pe_peer_address: "10.11.24.1"
+    pe_as_number: 100
+
+  - name: "CE25"
+    role: "CE"
+
+    bgp_router_id: "2.2.2.25"
+
+    wan_interface_name: "GigabitEthernet0/0/0"
+    wan_interface_ipv4_address: "10.11.25.2"
+    wan_interface_ipv4_prefix: 24
+
+    pe_peer_address: "10.11.25.1"
+    pe_as_number: 100
+
+  - name: "CE26"
+    role: "CE"
+
+    bgp_router_id: "2.2.2.26"
+
+    wan_interface_name: "GigabitEthernet0/0/0"
+    wan_interface_ipv4_address: "10.11.26.2"
+    wan_interface_ipv4_prefix: 24
+
+    pe_peer_address: "10.11.26.1"
+    pe_as_number: 100
+
+  - name: "CE27"
+    role: "CE"
+
+    bgp_router_id: "2.2.2.27"
+
+    wan_interface_name: "GigabitEthernet0/0/0"
+    wan_interface_ipv4_address: "10.11.27.2"
+    wan_interface_ipv4_prefix: 24
+
+    pe_peer_address: "10.11.27.1"
+    pe_as_number: 100
+
+  - name: "CE28"
+    role: "CE"
+
+    bgp_router_id: "2.2.2.28"
+
+    wan_interface_name: "GigabitEthernet0/0/0"
+    wan_interface_ipv4_address: "10.11.28.2"
+    wan_interface_ipv4_prefix: 24
+
+    pe_peer_address: "10.11.28.1"
+    pe_as_number: 100
+
+  - name: "CE29"
+    role: "CE"
+
+    bgp_router_id: "2.2.2.29"
+
+    wan_interface_name: "GigabitEthernet0/0/0"
+    wan_interface_ipv4_address: "10.11.29.2"
+    wan_interface_ipv4_prefix: 24
+
+    pe_peer_address: "10.11.29.1"
+    pe_as_number: 100
+
+  - name: "CE30"
+    role: "CE"
+
+    bgp_router_id: "2.2.2.30"
+
+    wan_interface_name: "GigabitEthernet0/0/0"
+    wan_interface_ipv4_address: "10.11.30.2"
+    wan_interface_ipv4_prefix: 24
+
+    pe_peer_address: "10.11.30.1"
+    pe_as_number: 100
+
+  - name: "CE31"
+    role: "CE"
+
+    bgp_router_id: "2.2.2.31"
+
+    wan_interface_name: "GigabitEthernet0/0/0"
+    wan_interface_ipv4_address: "10.11.31.2"
+    wan_interface_ipv4_prefix: 24
+
+    pe_peer_address: "10.11.31.1"
+    pe_as_number: 100
+
+  - name: "CE32"
+    role: "CE"
+
+    bgp_router_id: "2.2.2.32"
+
+    wan_interface_name: "GigabitEthernet0/0/0"
+    wan_interface_ipv4_address: "10.11.32.2"
+    wan_interface_ipv4_prefix: 24
+
+    pe_peer_address: "10.11.32.1"
+    pe_as_number: 100
+
+  - name: "CE33"
+    role: "CE"
+
+    bgp_router_id: "2.2.2.33"
+
+    wan_interface_name: "GigabitEthernet0/0/0"
+    wan_interface_ipv4_address: "10.11.33.2"
+    wan_interface_ipv4_prefix: 24
+
+    pe_peer_address: "10.11.33.1"
+    pe_as_number: 100
+
+  - name: "CE34"
+    role: "CE"
+
+    bgp_router_id: "2.2.2.34"
+
+    wan_interface_name: "GigabitEthernet0/0/0"
+    wan_interface_ipv4_address: "10.11.34.2"
+    wan_interface_ipv4_prefix: 24
+
+    pe_peer_address: "10.11.34.1"
+    pe_as_number: 100
+
+  - name: "CE35"
+    role: "CE"
+
+    bgp_router_id: "2.2.2.35"
+
+    wan_interface_name: "GigabitEthernet0/0/0"
+    wan_interface_ipv4_address: "10.11.35.2"
+    wan_interface_ipv4_prefix: 24
+
+    pe_peer_address: "10.11.35.1"
+    pe_as_number: 100
+
+  - name: "CE36"
+    role: "CE"
+
+    bgp_router_id: "2.2.2.36"
+
+    wan_interface_name: "GigabitEthernet0/0/0"
+    wan_interface_ipv4_address: "10.11.36.2"
+    wan_interface_ipv4_prefix: 24
+
+    pe_peer_address: "10.11.36.1"
+    pe_as_number: 100
+
+  - name: "CE37"
+    role: "CE"
+
+    bgp_router_id: "2.2.2.37"
+
+    wan_interface_name: "GigabitEthernet0/0/0"
+    wan_interface_ipv4_address: "10.11.37.2"
+    wan_interface_ipv4_prefix: 24
+
+    pe_peer_address: "10.11.37.1"
+    pe_as_number: 100
+
+  - name: "CE38"
+    role: "CE"
+
+    bgp_router_id: "2.2.2.38"
+
+    wan_interface_name: "GigabitEthernet0/0/0"
+    wan_interface_ipv4_address: "10.11.38.2"
+    wan_interface_ipv4_prefix: 24
+
+    pe_peer_address: "10.11.38.1"
+    pe_as_number: 100
+
+  - name: "CE39"
+    role: "CE"
+
+    bgp_router_id: "2.2.2.39"
+
+    wan_interface_name: "GigabitEthernet0/0/0"
+    wan_interface_ipv4_address: "10.11.39.2"
+    wan_interface_ipv4_prefix: 24
+
+    pe_peer_address: "10.11.39.1"
+    pe_as_number: 100
+
+  - name: "CE40"
+    role: "CE"
+
+    bgp_router_id: "2.2.2.40"
+
+    wan_interface_name: "GigabitEthernet0/0/0"
+    wan_interface_ipv4_address: "10.11.40.2"
+    wan_interface_ipv4_prefix: 24
+
+    pe_peer_address: "10.11.40.1"
+    pe_as_number: 100
+
+  - name: "CE41"
+    role: "CE"
+
+    bgp_router_id: "2.2.2.41"
+
+    wan_interface_name: "GigabitEthernet0/0/0"
+    wan_interface_ipv4_address: "10.11.41.2"
+    wan_interface_ipv4_prefix: 24
+
+    pe_peer_address: "10.11.41.1"
+    pe_as_number: 100
+
+  - name: "CE42"
+    role: "CE"
+
+    bgp_router_id: "2.2.2.42"
+
+    wan_interface_name: "GigabitEthernet0/0/0"
+    wan_interface_ipv4_address: "10.11.42.2"
+    wan_interface_ipv4_prefix: 24
+
+    pe_peer_address: "10.11.42.1"
+    pe_as_number: 100
+
+  - name: "CE43"
+    role: "CE"
+
+    bgp_router_id: "2.2.2.43"
+
+    wan_interface_name: "GigabitEthernet0/0/0"
+    wan_interface_ipv4_address: "10.11.43.2"
+    wan_interface_ipv4_prefix: 24
+
+    pe_peer_address: "10.11.43.1"
+    pe_as_number: 100
+
+  - name: "CE44"
+    role: "CE"
+
+    bgp_router_id: "2.2.2.44"
+
+    wan_interface_name: "GigabitEthernet0/0/0"
+    wan_interface_ipv4_address: "10.11.44.2"
+    wan_interface_ipv4_prefix: 24
+
+    pe_peer_address: "10.11.44.1"
+    pe_as_number: 100
+
+  - name: "CE45"
+    role: "CE"
+
+    bgp_router_id: "2.2.2.45"
+
+    wan_interface_name: "GigabitEthernet0/0/0"
+    wan_interface_ipv4_address: "10.11.45.2"
+    wan_interface_ipv4_prefix: 24
+
+    pe_peer_address: "10.11.45.1"
+    pe_as_number: 100
+
+  - name: "CE46"
+    role: "CE"
+
+    bgp_router_id: "2.2.2.46"
+
+    wan_interface_name: "GigabitEthernet0/0/0"
+    wan_interface_ipv4_address: "10.11.46.2"
+    wan_interface_ipv4_prefix: 24
+
+    pe_peer_address: "10.11.46.1"
+    pe_as_number: 100
+
+  - name: "CE47"
+    role: "CE"
+
+    bgp_router_id: "2.2.2.47"
+
+    wan_interface_name: "GigabitEthernet0/0/0"
+    wan_interface_ipv4_address: "10.11.47.2"
+    wan_interface_ipv4_prefix: 24
+
+    pe_peer_address: "10.11.47.1"
+    pe_as_number: 100
+
+  - name: "CE48"
+    role: "CE"
+
+    bgp_router_id: "2.2.2.48"
+
+    wan_interface_name: "GigabitEthernet0/0/0"
+    wan_interface_ipv4_address: "10.11.48.2"
+    wan_interface_ipv4_prefix: 24
+
+    pe_peer_address: "10.11.48.1"
+    pe_as_number: 100
+
+  - name: "CE49"
+    role: "CE"
+
+    bgp_router_id: "2.2.2.49"
+
+    wan_interface_name: "GigabitEthernet0/0/0"
+    wan_interface_ipv4_address: "10.11.49.2"
+    wan_interface_ipv4_prefix: 24
+
+    pe_peer_address: "10.11.49.1"
+    pe_as_number: 100
+
+  - name: "CE50"
+    role: "CE"
+
+    bgp_router_id: "2.2.2.50"
+
+    wan_interface_name: "GigabitEthernet0/0/0"
+    wan_interface_ipv4_address: "10.11.50.2"
+    wan_interface_ipv4_prefix: 24
+
+    pe_peer_address: "10.11.50.1"
+    pe_as_number: 100
+
+  - name: "CE51"
+    role: "CE"
+
+    bgp_router_id: "2.2.2.51"
+
+    wan_interface_name: "GigabitEthernet0/0/0"
+    wan_interface_ipv4_address: "10.11.51.2"
+    wan_interface_ipv4_prefix: 24
+
+    pe_peer_address: "10.11.51.1"
+    pe_as_number: 100
+
+  - name: "CE52"
+    role: "CE"
+
+    bgp_router_id: "2.2.2.52"
+
+    wan_interface_name: "GigabitEthernet0/0/0"
+    wan_interface_ipv4_address: "10.11.52.2"
+    wan_interface_ipv4_prefix: 24
+
+    pe_peer_address: "10.11.52.1"
+    pe_as_number: 100
+
+  - name: "CE53"
+    role: "CE"
+
+    bgp_router_id: "2.2.2.53"
+
+    wan_interface_name: "GigabitEthernet0/0/0"
+    wan_interface_ipv4_address: "10.11.53.2"
+    wan_interface_ipv4_prefix: 24
+
+    pe_peer_address: "10.11.53.1"
+    pe_as_number: 100
+
+  - name: "CE54"
+    role: "CE"
+
+    bgp_router_id: "2.2.2.54"
+
+    wan_interface_name: "GigabitEthernet0/0/0"
+    wan_interface_ipv4_address: "10.11.54.2"
+    wan_interface_ipv4_prefix: 24
+
+    pe_peer_address: "10.11.54.1"
+    pe_as_number: 100
+
+  - name: "CE55"
+    role: "CE"
+
+    bgp_router_id: "2.2.2.55"
+
+    wan_interface_name: "GigabitEthernet0/0/0"
+    wan_interface_ipv4_address: "10.11.55.2"
+    wan_interface_ipv4_prefix: 24
+
+    pe_peer_address: "10.11.55.1"
+    pe_as_number: 100

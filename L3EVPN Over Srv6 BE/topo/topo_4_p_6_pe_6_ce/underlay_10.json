@@ -1,0 +1,358 @@
+{
+  "nodes": [
+    {
+      "id": "PE1",
+      "role": "pe"
+    },
+    {
+      "id": "PE2",
+      "role": "pe"
+    },
+    {
+      "id": "PE3",
+      "role": "pe"
+    },
+    {
+      "id": "PE4",
+      "role": "pe"
+    },
+    {
+      "id": "PE5",
+      "role": "pe"
+    },
+    {
+      "id": "PE6",
+      "role": "pe"
+    },
+    {
+      "id": "P1",
+      "role": "p"
+    },
+    {
+      "id": "P2",
+      "role": "p"
+    },
+    {
+      "id": "P3",
+      "role": "p"
+    },
+    {
+      "id": "P4",
+      "role": "p"
+    }
+  ],
+  "links": [
+    {
+      "endpoints": [
+        {
+          "node": "PE1",
+          "if": "Gi0/0/1"
+        },
+        {
+          "node": "P1",
+          "if": "Gi0/1/1"
+        }
+      ],
+      "metric": 10
+    },
+    {
+      "endpoints": [
+        {
+          "node": "PE1",
+          "if": "Gi0/0/2"
+        },
+        {
+          "node": "P2",
+          "if": "Gi0/1/1"
+        }
+      ],
+      "metric": 10
+    },
+    {
+      "endpoints": [
+        {
+          "node": "PE1",
+          "if": "Gi0/0/3"
+        },
+        {
+          "node": "P3",
+          "if": "Gi0/1/1"
+        }
+      ],
+      "metric": 10
+    },
+    {
+      "endpoints": [
+        {
+          "node": "PE1",
+          "if": "Gi0/0/4"
+        },
+        {
+          "node": "P4",
+          "if": "Gi0/1/1"
+        }
+      ],
+      "metric": 10
+    },
+    {
+      "endpoints": [
+        {
+          "node": "PE2",
+          "if": "Gi0/0/1"
+        },
+        {
+          "node": "P1",
+          "if": "Gi0/1/2"
+        }
+      ],
+      "metric": 10
+    },
+    {
+      "endpoints": [
+        {
+          "node": "PE2",
+          "if": "Gi0/0/2"
+        },
+        {
+          "node": "P2",
+          "if": "Gi0/1/2"
+        }
+      ],
+      "metric": 10
+    },
+    {
+      "endpoints": [
+        {
+          "node": "PE2",
+          "if": "Gi0/0/3"
+        },
+        {
+          "node": "P3",
+          "if": "Gi0/1/2"
+        }
+      ],
+      "metric": 10
+    },
+    {
+      "endpoints": [
+        {
+          "node": "PE2",
+          "if": "Gi0/0/4"
+        },
+        {
+          "node": "P4",
+          "if": "Gi0/1/2"
+        }
+      ],
+      "metric": 10
+    },
+    {
+      "endpoints": [
+        {
+          "node": "PE3",
+          "if": "Gi0/0/1"
+        },
+        {
+          "node": "P1",
+          "if": "Gi0/1/3"
+        }
+      ],
+      "metric": 10
+    },
+    {
+      "endpoints": [
+        {
+          "node": "PE3",
+          "if": "Gi0/0/2"
+        },
+        {
+          "node": "P2",
+          "if": "Gi0/1/3"
+        }
+      ],
+      "metric": 10
+    },
+    {
+      "endpoints": [
+        {
+          "node": "PE3",
+          "if": "Gi0/0/3"
+        },
+        {
+          "node": "P3",
+          "if": "Gi0/1/3"
+        }
+      ],
+      "metric": 10
+    },
+    {
+      "endpoints": [
+        {
+          "node": "PE3",
+          "if": "Gi0/0/4"
+        },
+        {
+          "node": "P4",
+          "if": "Gi0/1/3"
+        }
+      ],
+      "metric": 10
+    },
+    {
+      "endpoints": [
+        {
+          "node": "PE4",
+          "if": "Gi0/0/1"
+        },
+        {
+          "node": "P1",
+          "if": "Gi0/1/4"
+        }
+      ],
+      "metric": 10
+    },
+    {
+      "endpoints": [
+        {
+          "node": "PE4",
+          "if": "Gi0/0/2"
+        },
+        {
+          "node": "P2",
+          "if": "Gi0/1/4"
+        }
+      ],
+      "metric": 10
+    },
+    {
+      "endpoints": [
+        {
+          "node": "PE4",
+          "if": "Gi0/0/3"
+        },
+        {
+          "node": "P3",
+          "if": "Gi0/1/4"
+        }
+      ],
+      "metric": 10
+    },
+    {
+      "endpoints": [
+        {
+          "node": "PE4",
+          "if": "Gi0/0/4"
+        },
+        {
+          "node": "P4",
+          "if": "Gi0/1/4"
+        }
+      ],
+      "metric": 10
+    },
+    {
+      "endpoints": [
+        {
+          "node": "PE5",
+          "if": "Gi0/0/1"
+        },
+        {
+          "node": "P1",
+          "if": "Gi0/1/5"
+        }
+      ],
+      "metric": 10
+    },
+    {
+      "endpoints": [
+        {
+          "node": "PE5",
+          "if": "Gi0/0/2"
+        },
+        {
+          "node": "P2",
+          "if": "Gi0/1/5"
+        }
+      ],
+      "metric": 10
+    },
+    {
+      "endpoints": [
+        {
+          "node": "PE5",
+          "if": "Gi0/0/3"
+        },
+        {
+          "node": "P3",
+          "if": "Gi0/1/5"
+        }
+      ],
+      "metric": 10
+    },
+    {
+      "endpoints": [
+        {
+          "node": "PE5",
+          "if": "Gi0/0/4"
+        },
+        {
+          "node": "P4",
+          "if": "Gi0/1/5"
+        }
+      ],
+      "metric": 10
+    },
+    {
+      "endpoints": [
+        {
+          "node": "PE6",
+          "if": "Gi0/0/1"
+        },
+        {
+          "node": "P1",
+          "if": "Gi0/1/6"
+        }
+      ],
+      "metric": 10
+    },
+    {
+      "endpoints": [
+        {
+          "node": "PE6",
+          "if": "Gi0/0/2"
+        },
+        {
+          "node": "P2",
+          "if": "Gi0/1/6"
+        }
+      ],
+      "metric": 10
+    },
+    {
+      "endpoints": [
+        {
+          "node": "PE6",
+          "if": "Gi0/0/3"
+        },
+        {
+          "node": "P3",
+          "if": "Gi0/1/6"
+        }
+      ],
+      "metric": 10
+    },
+    {
+      "endpoints": [
+        {
+          "node": "PE6",
+          "if": "Gi0/0/4"
+        },
+        {
+          "node": "P4",
+          "if": "Gi0/1/6"
+        }
+      ],
+      "metric": 10
+    }
+  ]
+}

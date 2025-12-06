@@ -1,0 +1,38 @@
+"overlay": {
+  "nodes": [
+    { "id": "CE1", "role": "ce" },
+    { "id": "CE2", "role": "ce" },
+    { "id": "PE1", "role": "pe" },
+    { "id": "PE2", "role": "pe" }
+  ],
+
+  "access_links": [
+    {
+      "type": "ce-pe",
+      "ce": "CE1",
+      "pe": "PE1",
+      "vrf": "CustA",
+      "routing_protocol": "ebgp"        // or "static"
+    },
+    {
+      "type": "ce-pe",
+      "ce": "CE2",
+      "pe": "PE2",
+      "vrf": "CustA",
+      "routing_protocol": "ebgp"
+    }
+  ],
+
+  "vpn_links": [
+    {
+      "type": "pe-pe-vpn",
+      "vpn_name": "CustA",
+      "vpn_type": "l3evpn",           
+      "endpoints": [
+        { "pe": "PE1", "vrf": "CustA" },
+        { "pe": "PE2", "vrf": "CustA" }
+      ],
+      "transport": "srv6-be"        
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+P.txt - L3EVPN over SRv6 BE P-core template
+
+Step 1: Configure IPv6 Interfaces
+Description:
+Configure IPv6 addresses on core-facing interfaces and the loopback interface so that P can participate in the IPv6 underlay and IS-IS.
+
+JSON Example:
+{
+  "interfaces": {
+    "Loopback1": {
+      "description": "Stable IPv6 ID for core routing",
+      "ipv6_enable": true,
+      "ipv6_address": {
+        "address": "${p_loopback_ipv6_address}",
+        "prefix_length": "${p_loopback_ipv6_prefix}"
+      }
+    },
+    "${core_interface_1_name}": {
+      "description": "Core-facing interface towards PE1 or previous hop",
+      "ipv6_enable": true,
+      "ipv6_address": {
+        "address": "${core_interface_1_ipv6_address}",
+        "prefix_length": "${core_interface_1_ipv6_prefix}"
+      }
+    },
+    "${core_interface_2_name}": {
+      "description": "Core-facing interface towards PE2 or next hop",
+      "ipv6_enable": true,
+      "ipv6_address": {
+        "address": "${core_interface_2_ipv6_address}",
+        "prefix_length": "${core_interface_2_ipv6_prefix}"
+      }
+    }
+  }
+}
+
+Step 2: Configure Underlay IGP (IS-IS)
+Description:
+Enable IS-IS for IPv6 on P and activate it on the loopback and both core-facing interfaces.
+
+JSON Example:
+{
+  "routing": {
+    "isis": {
+      "process_id": "${isis_process_id}",
+      "level": "level-1",
+      "cost_style": "wide",
+      "network_entity": "${net_entity}",
+      "topology": "ipv6",
+      "enabled_on_interfaces": [
+        "Loopback1",
+        "${core_interface_1_name}",
+        "${core_interface_2_name}"
+      ]
+    }
+  }
+}

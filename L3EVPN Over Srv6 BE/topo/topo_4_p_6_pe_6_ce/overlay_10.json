@@ -1,0 +1,130 @@
+{
+  "nodes": [
+    {
+      "id": "CE1",
+      "role": "ce"
+    },
+    {
+      "id": "CE2",
+      "role": "ce"
+    },
+    {
+      "id": "CE3",
+      "role": "ce"
+    },
+    {
+      "id": "CE4",
+      "role": "ce"
+    },
+    {
+      "id": "CE5",
+      "role": "ce"
+    },
+    {
+      "id": "CE6",
+      "role": "ce"
+    },
+    {
+      "id": "PE1",
+      "role": "pe"
+    },
+    {
+      "id": "PE2",
+      "role": "pe"
+    },
+    {
+      "id": "PE3",
+      "role": "pe"
+    },
+    {
+      "id": "PE4",
+      "role": "pe"
+    },
+    {
+      "id": "PE5",
+      "role": "pe"
+    },
+    {
+      "id": "PE6",
+      "role": "pe"
+    }
+  ],
+  "access_links": [
+    {
+      "type": "ce-pe",
+      "ce": "CE1",
+      "pe": "PE1",
+      "vrf": "Cust1",
+      "routing_protocol": "ebgp"
+    },
+    {
+      "type": "ce-pe",
+      "ce": "CE2",
+      "pe": "PE2",
+      "vrf": "Cust2",
+      "routing_protocol": "ebgp"
+    },
+    {
+      "type": "ce-pe",
+      "ce": "CE3",
+      "pe": "PE3",
+      "vrf": "Cust3",
+      "routing_protocol": "ebgp"
+    },
+    {
+      "type": "ce-pe",
+      "ce": "CE4",
+      "pe": "PE4",
+      "vrf": "Cust4",
+      "routing_protocol": "ebgp"
+    },
+    {
+      "type": "ce-pe",
+      "ce": "CE5",
+      "pe": "PE5",
+      "vrf": "Cust5",
+      "routing_protocol": "ebgp"
+    },
+    {
+      "type": "ce-pe",
+      "ce": "CE6",
+      "pe": "PE6",
+      "vrf": "Cust6",
+      "routing_protocol": "ebgp"
+    }
+  ],
+  "vpn_links": [
+    {
+      "type": "pe-pe-vpn",
+      "vpn_name": "VPN1",
+      "vpn_type": "l3vpn",
+      "endpoints": [
+        {
+          "pe": "PE1",
+          "vrf": "Cust1"
+        },
+        {
+          "pe": "PE2",
+          "vrf": "Cust2"
+        }
+      ],
+      "transport": "srv6-be"
+    },
+    {
+      "type": "pe-pe-vpn",
+      "vpn_name": "VPN2",
+      "vpn_type": "l3vpn",
+      "endpoints": [
+        {
+          "pe": "PE3",
+          "vrf": "Cust3"
+        },
+        {
+          "pe": "PE4",
+          "vrf": "Cust4"
+        }
+      ],
+      "transport": "srv6-be"
+    }
+  ]
+}

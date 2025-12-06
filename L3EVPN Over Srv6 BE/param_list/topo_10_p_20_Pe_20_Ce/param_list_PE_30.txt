@@ -1,0 +1,593 @@
+global_config:
+  bgp_as_number: 100
+  isis_process_id: 1
+  isis_level: "level-1"
+  net_entity: "10.0000.0000.0001.00"
+
+vpn_services:
+  - vpn_name: "vpna"
+    rd_value: "100:1"
+    rt_value: "1:1"
+    vpn_type: "l3evpn"
+    transport: "srv6-be"
+
+devices:
+  - name: "PE1"
+    role: "PE"
+
+    bgp_router_id: "1.1.1.1"
+
+    loopback_ipv6_address: "2001:DB8:1::1"
+    loopback_ipv6_prefix: 128
+
+    core_interface_name: "GigabitEthernet1/0/0"
+    core_interface_ipv6_address: "2001:DB8:10::1"
+    core_interface_ipv6_prefix: 64
+
+    ce_interface_name: "GigabitEthernet2/0/0"
+    ce_interface_ipv4_address: "10.11.1.1"
+    ce_interface_ipv4_prefix: 24
+
+    ce_peer_address: "10.11.1.2"
+    ce_as_number: 65001
+
+    remote_pe_address: "2001:DB8:2::1"
+
+    locator_name: "PE1"
+    locator_prefix_address: "2001:DB8:100:1::"
+    locator_prefix_length: 64
+    opcode_sid: "::10"
+
+    srv6_be_mode: "be"
+    srv6_be_endpoint: "2001:DB8:2::1"
+
+  - name: "PE2"
+    role: "PE"
+
+    bgp_router_id: "1.1.1.2"
+
+    loopback_ipv6_address: "2001:DB8:2::1"
+    loopback_ipv6_prefix: 128
+
+    core_interface_name: "GigabitEthernet1/0/0"
+    core_interface_ipv6_address: "2001:DB8:10::2"
+    core_interface_ipv6_prefix: 64
+
+    ce_interface_name: "GigabitEthernet2/0/0"
+    ce_interface_ipv4_address: "10.11.2.1"
+    ce_interface_ipv4_prefix: 24
+
+    ce_peer_address: "10.11.2.2"
+    ce_as_number: 65002
+
+    remote_pe_address: "2001:DB8:1::1"
+
+    locator_name: "PE2"
+    locator_prefix_address: "2001:DB8:100:2::"
+    locator_prefix_length: 64
+    opcode_sid: "::10"
+
+    srv6_be_mode: "be"
+    srv6_be_endpoint: "2001:DB8:1::1"
+
+  - name: "PE3"
+    role: "PE"
+
+    bgp_router_id: "1.1.1.3"
+
+    loopback_ipv6_address: "2001:DB8:3::1"
+    loopback_ipv6_prefix: 128
+
+    core_interface_name: "GigabitEthernet1/0/0"
+    core_interface_ipv6_address: "2001:DB8:10::3"
+    core_interface_ipv6_prefix: 64
+
+    ce_interface_name: "GigabitEthernet2/0/0"
+    ce_interface_ipv4_address: "10.11.3.1"
+    ce_interface_ipv4_prefix: 24
+
+    ce_peer_address: "10.11.3.2"
+    ce_as_number: 65003
+
+    remote_pe_address: "2001:DB8:4::1"
+
+    locator_name: "PE3"
+    locator_prefix_address: "2001:DB8:100:3::"
+    locator_prefix_length: 64
+    opcode_sid: "::10"
+
+    srv6_be_mode: "be"
+    srv6_be_endpoint: "2001:DB8:4::1"
+
+  - name: "PE4"
+    role: "PE"
+
+    bgp_router_id: "1.1.1.4"
+
+    loopback_ipv6_address: "2001:DB8:4::1"
+    loopback_ipv6_prefix: 128
+
+    core_interface_name: "GigabitEthernet1/0/0"
+    core_interface_ipv6_address: "2001:DB8:10::4"
+    core_interface_ipv6_prefix: 64
+
+    ce_interface_name: "GigabitEthernet2/0/0"
+    ce_interface_ipv4_address: "10.11.4.1"
+    ce_interface_ipv4_prefix: 24
+
+    ce_peer_address: "10.11.4.2"
+    ce_as_number: 65004
+
+    remote_pe_address: "2001:DB8:3::1"
+
+    locator_name: "PE4"
+    locator_prefix_address: "2001:DB8:100:4::"
+    locator_prefix_length: 64
+    opcode_sid: "::10"
+
+    srv6_be_mode: "be"
+    srv6_be_endpoint: "2001:DB8:3::1"
+
+  - name: "PE5"
+    role: "PE"
+
+    bgp_router_id: "1.1.1.5"
+
+    loopback_ipv6_address: "2001:DB8:5::1"
+    loopback_ipv6_prefix: 128
+
+    core_interface_name: "GigabitEthernet1/0/0"
+    core_interface_ipv6_address: "2001:DB8:10::5"
+    core_interface_ipv6_prefix: 64
+
+    ce_interface_name: "GigabitEthernet2/0/0"
+    ce_interface_ipv4_address: "10.11.5.1"
+    ce_interface_ipv4_prefix: 24
+
+    ce_peer_address: "10.11.5.2"
+    ce_as_number: 65005
+
+    remote_pe_address: "2001:DB8:6::1"
+
+    locator_name: "PE5"
+    locator_prefix_address: "2001:DB8:100:5::"
+    locator_prefix_length: 64
+    opcode_sid: "::10"
+
+    srv6_be_mode: "be"
+    srv6_be_endpoint: "2001:DB8:6::1"
+
+  - name: "PE6"
+    role: "PE"
+
+    bgp_router_id: "1.1.1.6"
+
+    loopback_ipv6_address: "2001:DB8:6::1"
+    loopback_ipv6_prefix: 128
+
+    core_interface_name: "GigabitEthernet1/0/0"
+    core_interface_ipv6_address: "2001:DB8:10::6"
+    core_interface_ipv6_prefix: 64
+
+    ce_interface_name: "GigabitEthernet2/0/0"
+    ce_interface_ipv4_address: "10.11.6.1"
+    ce_interface_ipv4_prefix: 24
+
+    ce_peer_address: "10.11.6.2"
+    ce_as_number: 65006
+
+    remote_pe_address: "2001:DB8:5::1"
+
+    locator_name: "PE6"
+    locator_prefix_address: "2001:DB8:100:6::"
+    locator_prefix_length: 64
+    opcode_sid: "::10"
+
+    srv6_be_mode: "be"
+    srv6_be_endpoint: "2001:DB8:5::1"
+
+  - name: "PE7"
+    role: "PE"
+
+    bgp_router_id: "1.1.1.7"
+
+    loopback_ipv6_address: "2001:DB8:7::1"
+    loopback_ipv6_prefix: 128
+
+    core_interface_name: "GigabitEthernet1/0/0"
+    core_interface_ipv6_address: "2001:DB8:10::7"
+    core_interface_ipv6_prefix: 64
+
+    ce_interface_name: "GigabitEthernet2/0/0"
+    ce_interface_ipv4_address: "10.11.7.1"
+    ce_interface_ipv4_prefix: 24
+
+    ce_peer_address: "10.11.7.2"
+    ce_as_number: 65007
+
+    remote_pe_address: "2001:DB8:8::1"
+
+    locator_name: "PE7"
+    locator_prefix_address: "2001:DB8:100:7::"
+    locator_prefix_length: 64
+    opcode_sid: "::10"
+
+    srv6_be_mode: "be"
+    srv6_be_endpoint: "2001:DB8:8::1"
+
+  - name: "PE8"
+    role: "PE"
+
+    bgp_router_id: "1.1.1.8"
+
+    loopback_ipv6_address: "2001:DB8:8::1"
+    loopback_ipv6_prefix: 128
+
+    core_interface_name: "GigabitEthernet1/0/0"
+    core_interface_ipv6_address: "2001:DB8:10::8"
+    core_interface_ipv6_prefix: 64
+
+    ce_interface_name: "GigabitEthernet2/0/0"
+    ce_interface_ipv4_address: "10.11.8.1"
+    ce_interface_ipv4_prefix: 24
+
+    ce_peer_address: "10.11.8.2"
+    ce_as_number: 65008
+
+    remote_pe_address: "2001:DB8:7::1"
+
+    locator_name: "PE8"
+    locator_prefix_address: "2001:DB8:100:8::"
+    locator_prefix_length: 64
+    opcode_sid: "::10"
+
+    srv6_be_mode: "be"
+    srv6_be_endpoint: "2001:DB8:7::1"
+
+  - name: "PE9"
+    role: "PE"
+
+    bgp_router_id: "1.1.1.9"
+
+    loopback_ipv6_address: "2001:DB8:9::1"
+    loopback_ipv6_prefix: 128
+
+    core_interface_name: "GigabitEthernet1/0/0"
+    core_interface_ipv6_address: "2001:DB8:10::9"
+    core_interface_ipv6_prefix: 64
+
+    ce_interface_name: "GigabitEthernet2/0/0"
+    ce_interface_ipv4_address: "10.11.9.1"
+    ce_interface_ipv4_prefix: 24
+
+    ce_peer_address: "10.11.9.2"
+    ce_as_number: 65009
+
+    remote_pe_address: "2001:DB8:10::1"
+
+    locator_name: "PE9"
+    locator_prefix_address: "2001:DB8:100:9::"
+    locator_prefix_length: 64
+    opcode_sid: "::10"
+
+    srv6_be_mode: "be"
+    srv6_be_endpoint: "2001:DB8:10::1"
+
+  - name: "PE10"
+    role: "PE"
+
+    bgp_router_id: "1.1.1.10"
+
+    loopback_ipv6_address: "2001:DB8:10::1"
+    loopback_ipv6_prefix: 128
+
+    core_interface_name: "GigabitEthernet1/0/0"
+    core_interface_ipv6_address: "2001:DB8:10::10"
+    core_interface_ipv6_prefix: 64
+
+    ce_interface_name: "GigabitEthernet2/0/0"
+    ce_interface_ipv4_address: "10.11.10.1"
+    ce_interface_ipv4_prefix: 24
+
+    ce_peer_address: "10.11.10.2"
+    ce_as_number: 65010
+
+    remote_pe_address: "2001:DB8:9::1"
+
+    locator_name: "PE10"
+    locator_prefix_address: "2001:DB8:100:A::"
+    locator_prefix_length: 64
+    opcode_sid: "::10"
+
+    srv6_be_mode: "be"
+    srv6_be_endpoint: "2001:DB8:9::1"
+
+  - name: "PE11"
+    role: "PE"
+
+    bgp_router_id: "1.1.1.11"
+
+    loopback_ipv6_address: "2001:DB8:11::1"
+    loopback_ipv6_prefix: 128
+
+    core_interface_name: "GigabitEthernet1/0/0"
+    core_interface_ipv6_address: "2001:DB8:10::11"
+    core_interface_ipv6_prefix: 64
+
+    ce_interface_name: "GigabitEthernet2/0/0"
+    ce_interface_ipv4_address: "10.11.11.1"
+    ce_interface_ipv4_prefix: 24
+
+    ce_peer_address: "10.11.11.2"
+    ce_as_number: 65011
+
+    remote_pe_address: "2001:DB8:12::1"
+
+    locator_name: "PE11"
+    locator_prefix_address: "2001:DB8:100:B::"
+    locator_prefix_length: 64
+    opcode_sid: "::10"
+
+    srv6_be_mode: "be"
+    srv6_be_endpoint: "2001:DB8:12::1"
+
+  - name: "PE12"
+    role: "PE"
+
+    bgp_router_id: "1.1.1.12"
+
+    loopback_ipv6_address: "2001:DB8:12::1"
+    loopback_ipv6_prefix: 128
+
+    core_interface_name: "GigabitEthernet1/0/0"
+    core_interface_ipv6_address: "2001:DB8:10::12"
+    core_interface_ipv6_prefix: 64
+
+    ce_interface_name: "GigabitEthernet2/0/0"
+    ce_interface_ipv4_address: "10.11.12.1"
+    ce_interface_ipv4_prefix: 24
+
+    ce_peer_address: "10.11.12.2"
+    ce_as_number: 65012
+
+    remote_pe_address: "2001:DB8:11::1"
+
+    locator_name: "PE12"
+    locator_prefix_address: "2001:DB8:100:C::"
+    locator_prefix_length: 64
+    opcode_sid: "::10"
+
+    srv6_be_mode: "be"
+    srv6_be_endpoint: "2001:DB8:11::1"
+
+  - name: "PE13"
+    role: "PE"
+
+    bgp_router_id: "1.1.1.13"
+
+    loopback_ipv6_address: "2001:DB8:13::1"
+    loopback_ipv6_prefix: 128
+
+    core_interface_name: "GigabitEthernet1/0/0"
+    core_interface_ipv6_address: "2001:DB8:10::13"
+    core_interface_ipv6_prefix: 64
+
+    ce_interface_name: "GigabitEthernet2/0/0"
+    ce_interface_ipv4_address: "10.11.13.1"
+    ce_interface_ipv4_prefix: 24
+
+    ce_peer_address: "10.11.13.2"
+    ce_as_number: 65013
+
+    remote_pe_address: "2001:DB8:14::1"
+
+    locator_name: "PE13"
+    locator_prefix_address: "2001:DB8:100:D::"
+    locator_prefix_length: 64
+    opcode_sid: "::10"
+
+    srv6_be_mode: "be"
+    srv6_be_endpoint: "2001:DB8:14::1"
+
+  - name: "PE14"
+    role: "PE"
+
+    bgp_router_id: "1.1.1.14"
+
+    loopback_ipv6_address: "2001:DB8:14::1"
+    loopback_ipv6_prefix: 128
+
+    core_interface_name: "GigabitEthernet1/0/0"
+    core_interface_ipv6_address: "2001:DB8:10::14"
+    core_interface_ipv6_prefix: 64
+
+    ce_interface_name: "GigabitEthernet2/0/0"
+    ce_interface_ipv4_address: "10.11.14.1"
+    ce_interface_ipv4_prefix: 24
+
+    ce_peer_address: "10.11.14.2"
+    ce_as_number: 65014
+
+    remote_pe_address: "2001:DB8:13::1"
+
+    locator_name: "PE14"
+    locator_prefix_address: "2001:DB8:100:E::"
+    locator_prefix_length: 64
+    opcode_sid: "::10"
+
+    srv6_be_mode: "be"
+    srv6_be_endpoint: "2001:DB8:13::1"
+
+  - name: "PE15"
+    role: "PE"
+
+    bgp_router_id: "1.1.1.15"
+
+    loopback_ipv6_address: "2001:DB8:15::1"
+    loopback_ipv6_prefix: 128
+
+    core_interface_name: "GigabitEthernet1/0/0"
+    core_interface_ipv6_address: "2001:DB8:10::15"
+    core_interface_ipv6_prefix: 64
+
+    ce_interface_name: "GigabitEthernet2/0/0"
+    ce_interface_ipv4_address: "10.11.15.1"
+    ce_interface_ipv4_prefix: 24
+
+    ce_peer_address: "10.11.15.2"
+    ce_as_number: 65015
+
+    remote_pe_address: "2001:DB8:16::1"
+
+    locator_name: "PE15"
+    locator_prefix_address: "2001:DB8:100:F::"
+    locator_prefix_length: 64
+    opcode_sid: "::10"
+
+    srv6_be_mode: "be"
+    srv6_be_endpoint: "2001:DB8:16::1"
+
+  - name: "PE16"
+    role: "PE"
+
+    bgp_router_id: "1.1.1.16"
+
+    loopback_ipv6_address: "2001:DB8:16::1"
+    loopback_ipv6_prefix: 128
+
+    core_interface_name: "GigabitEthernet1/0/0"
+    core_interface_ipv6_address: "2001:DB8:10::16"
+    core_interface_ipv6_prefix: 64
+
+    ce_interface_name: "GigabitEthernet2/0/0"
+    ce_interface_ipv4_address: "10.11.16.1"
+    ce_interface_ipv4_prefix: 24
+
+    ce_peer_address: "10.11.16.2"
+    ce_as_number: 65016
+
+    remote_pe_address: "2001:DB8:15::1"
+
+    locator_name: "PE16"
+    locator_prefix_address: "2001:DB8:100:10::"
+    locator_prefix_length: 64
+    opcode_sid: "::10"
+
+    srv6_be_mode: "be"
+    srv6_be_endpoint: "2001:DB8:15::1"
+
+  - name: "PE17"
+    role: "PE"
+
+    bgp_router_id: "1.1.1.17"
+
+    loopback_ipv6_address: "2001:DB8:17::1"
+    loopback_ipv6_prefix: 128
+
+    core_interface_name: "GigabitEthernet1/0/0"
+    core_interface_ipv6_address: "2001:DB8:10::17"
+    core_interface_ipv6_prefix: 64
+
+    ce_interface_name: "GigabitEthernet2/0/0"
+    ce_interface_ipv4_address: "10.11.17.1"
+    ce_interface_ipv4_prefix: 24
+
+    ce_peer_address: "10.11.17.2"
+    ce_as_number: 65017
+
+    remote_pe_address: "2001:DB8:18::1"
+
+    locator_name: "PE17"
+    locator_prefix_address: "2001:DB8:100:11::"
+    locator_prefix_length: 64
+    opcode_sid: "::10"
+
+    srv6_be_mode: "be"
+    srv6_be_endpoint: "2001:DB8:18::1"
+
+  - name: "PE18"
+    role: "PE"
+
+    bgp_router_id: "1.1.1.18"
+
+    loopback_ipv6_address: "2001:DB8:18::1"
+    loopback_ipv6_prefix: 128
+
+    core_interface_name: "GigabitEthernet1/0/0"
+    core_interface_ipv6_address: "2001:DB8:10::18"
+    core_interface_ipv6_prefix: 64
+
+    ce_interface_name: "GigabitEthernet2/0/0"
+    ce_interface_ipv4_address: "10.11.18.1"
+    ce_interface_ipv4_prefix: 24
+
+    ce_peer_address: "10.11.18.2"
+    ce_as_number: 65018
+
+    remote_pe_address: "2001:DB8:17::1"
+
+    locator_name: "PE18"
+    locator_prefix_address: "2001:DB8:100:12::"
+    locator_prefix_length: 64
+    opcode_sid: "::10"
+
+    srv6_be_mode: "be"
+    srv6_be_endpoint: "2001:DB8:17::1"
+
+  - name: "PE19"
+    role: "PE"
+
+    bgp_router_id: "1.1.1.19"
+
+    loopback_ipv6_address: "2001:DB8:19::1"
+    loopback_ipv6_prefix: 128
+
+    core_interface_name: "GigabitEthernet1/0/0"
+    core_interface_ipv6_address: "2001:DB8:10::19"
+    core_interface_ipv6_prefix: 64
+
+    ce_interface_name: "GigabitEthernet2/0/0"
+    ce_interface_ipv4_address: "10.11.19.1"
+    ce_interface_ipv4_prefix: 24
+
+    ce_peer_address: "10.11.19.2"
+    ce_as_number: 65019
+
+    remote_pe_address: "2001:DB8:20::1"
+
+    locator_name: "PE19"
+    locator_prefix_address: "2001:DB8:100:13::"
+    locator_prefix_length: 64
+    opcode_sid: "::10"
+
+    srv6_be_mode: "be"
+    srv6_be_endpoint: "2001:DB8:20::1"
+
+  - name: "PE20"
+    role: "PE"
+
+    bgp_router_id: "1.1.1.20"
+
+    loopback_ipv6_address: "2001:DB8:20::1"
+    loopback_ipv6_prefix: 128
+
+    core_interface_name: "GigabitEthernet1/0/0"
+    core_interface_ipv6_address: "2001:DB8:10::20"
+    core_interface_ipv6_prefix: 64
+
+    ce_interface_name: "GigabitEthernet2/0/0"
+    ce_interface_ipv4_address: "10.11.20.1"
+    ce_interface_ipv4_prefix: 24
+
+    ce_peer_address: "10.11.20.2"
+    ce_as_number: 65020
+
+    remote_pe_address: "2001:DB8:19::1"
+
+    locator_name: "PE20"
+    locator_prefix_address: "2001:DB8:100:14::"
+    locator_prefix_length: 64
+    opcode_sid: "::10"
+
+    srv6_be_mode: "be"
+    srv6_be_endpoint: "2001:DB8:19::1"

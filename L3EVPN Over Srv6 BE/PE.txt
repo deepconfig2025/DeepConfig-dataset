@@ -1,0 +1,166 @@
+PE.txt - L3EVPN over SRv6 BE PE template
+
+Step 1: Configure Interfaces
+Description:
+Configure the loopback interface as the stable IPv6 address for BGP peering and SRv6 source.
+Configure the core-facing interface towards the P router with IPv6.
+Configure the CE-facing interface with IPv4 and bind it to the customer VPN instance.
+
+JSON Example:
+{
+  "interfaces": {
+    "Loopback1": {
+      "description": "Stable IPv6 address for BGP peering and SRv6 source",
+      "ipv6_enable": true,
+      "ipv6_address": {
+        "address": "${loopback_ipv6_address}",
+        "prefix_length": "${loopback_ipv6_prefix}"
+      }
+    },
+    "${core_interface_name}": {
+      "description": "Core-facing interface to connect to P router",
+      "ipv6_enable": true,
+      "ipv6_address": {
+        "address": "${core_interface_ipv6_address}",
+        "prefix_length": "${core_interface_ipv6_prefix}"
+      }
+    },
+    "${ce_interface_name}": {
+      "description": "CE-facing interface bound to the customer VPN",
+      "vpn_binding": "${vpn_name}",
+      "ip_address": {
+        "address": "${ce_interface_ipv4_address}",
+        "prefix_length": "${ce_interface_ipv4_prefix}"
+      }
+    }
+  }
+}
+
+Step 2: Configure VPN Instance (VRF)
+Description:
+Create the EVPN L3VPN instance and configure RD/RT for this VPN.
+
+JSON Example:
+{
+  "vpn_instances": [
+    {
+      "name": "${vpn_name}",
+      "ipv4_family": {
+        "route_distinguisher": "${rd_value}",
+        "vpn_target": {
+          "value": "${rt_value}",
+          "type": "evpn",
+          "direction": "both"
+        },
+        "label_mode": "per-instance"
+      }
+    }
+  ]
+}
+
+Step 3: Configure Underlay IGP (IS-IS)
+Description:
+Enable IS-IS for IPv6 underlay on the PE.
+Advertise the loopback and core-facing interfaces into IS-IS.
+
+JSON Example:
+{
+  "routing": {
+    "isis": {
+      "process_id": "${isis_process_id}",
+      "level": "level-1",
+      "cost_style": "wide",
+      "network_entity": "${net_entity}",
+      "topology": "ipv6",
+      "enabled_on_interfaces": [
+        "Loopback1",
+        "${core_interface_name}"
+      ]
+    }
+  }
+}
+
+Step 4: Configure BGP (CE eBGP + PE–PE EVPN iBGP)
+Description:
+1. Configure global BGP AS and router-id.
+2. Under the VPN instance, configure an eBGP peer towards the CE and import direct routes.
+3. In the EVPN address family, configure an iBGP EVPN peer using the loopback address of the remote PE.
+
+JSON Example:
+{
+  "bgp": {
+    "as_number": "${bgp_as_number}",
+    "router_id": "${bgp_router_id}",
+
+    "evpn_ibgp_peer": {
+      "address": "${remote_pe_ipv6_address}",
+      "remote_as": "${bgp_as_number}",
+      "update_source": "Loopback1",
+      "address_families_enabled": [
+        "l2vpn_evpn"
+      ]
+    },
+
+    "vrf_config": {
+      "name": "${vpn_name}",
+      "eBGP_peer_customer": {
+        "address": "${ce_peer_ipv4_address}",
+        "remote_as": "${ce_as_number}"
+      },
+      "ipv4_unicast": {
+        "import_route_direct": true,
+        "advertise_l2vpn_evpn": true
+      }
+    },
+
+    "evpn_policies": {
+      "apply_vpn_target_policy": true
+    }
+  }
+}
+
+Step 5: Configure Segment Routing (SRv6)
+Description:
+Enable SRv6 on the PE, define a locator prefix, and create an End.DT4 service SID bound to the VPN instance.
+Advertise the locator in IS-IS and enable SRv6 for EVPN in BGP.
+
+JSON Example:
+{
+  "segment_routing_v6": {
+    "encapsulation_source_address": "${loopback_ipv6_address}",
+
+    "locators": [
+      {
+        "name": "${locator_name}",
+        "prefix": {
+          "address": "${locator_prefix_address}",
+          "prefix_length": "${locator_prefix_length}"
+        },
+        "service_sids": [
+          {
+            "opcode": "${opcode_sid}",
+            "function": "end-dt4",
+            "vpn_instance": "${vpn_name}",
+            "service_type": "evpn"
+          }
+        ]
+      }
+    ]
+  },
+
+  "isis_advertisement": {
+    "process_id": "${isis_process_id}",
+    "advertise_srv6_locator": "${locator_name}"
+  },
+
+  "bgp_evpn_srv6": {
+    "as_number": "${bgp_as_number}",
+    "remote_evpn_peer": "${remote_pe_ipv6_address}",
+    "advertise_encap_type": "srv6",
+    "vrf_name": "${vpn_name}",
+    "activate_srv6_for_evpn": {
+      "locator": "${locator_name}",
+      "policy": "best-effort"
+    }
+  }
+}

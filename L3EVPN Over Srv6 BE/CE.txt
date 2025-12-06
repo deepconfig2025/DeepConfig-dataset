@@ -1,0 +1,53 @@
+CE.txt - L3EVPN over SRv6 BE CE template
+
+Step 1: Configure Interfaces
+Description:
+Configure the access interface towards the PE and the loopback interface used as the customer prefix to be advertised.
+
+JSON Example:
+{
+  "interfaces": {
+    "${pe_uplink_interface_name}": {
+      "description": "Uplink interface towards PE",
+      "ip_address": {
+        "address": "${ce_to_pe_ipv4_address}",
+        "prefix_length": "${ce_to_pe_ipv4_prefix}"
+      }
+    },
+    "Loopback1": {
+      "description": "Customer service prefix to be advertised via BGP",
+      "ip_address": {
+        "address": "${ce_loopback_ipv4_address}",
+        "prefix_length": "${ce_loopback_ipv4_prefix}"
+      }
+    }
+  }
+}
+
+Step 2: Configure eBGP Peering with PE
+Description:
+Configure BGP on the CE with its own AS number, establish an eBGP session with the PE’s interface address, and advertise the loopback prefix.
+
+JSON Example:
+{
+  "bgp": {
+    "as_number": "${ce_as_number}",
+
+    "peering": {
+      "peer_address": "${pe_to_ce_ipv4_address}",
+      "peer_as": "${pe_as_number}"
+    },
+
+    "ipv4_unicast": {
+      "advertised_networks": [
+        {
+          "network": "${ce_loopback_ipv4_address}",
+          "prefix_length": "${ce_loopback_ipv4_prefix}"
+        }
+      ],
+      "enable_peer": [
+        "${pe_to_ce_ipv4_address}"
+      ]
+    }
+  }
+}

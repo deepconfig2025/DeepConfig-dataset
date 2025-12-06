@@ -1,0 +1,12 @@
+"tunnel": {
+  "pe_pairs": [
+    {
+      "src_pe": "PE1",
+      "dst_pe": "PE2",
+      "transport": {
+        "type": "srv6",
+        "mode": "be"              // "be" for best-effort, "te" for TE Policy
+      }
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+Step 1: Configure Interface IP Addresses
+Description: Configure IPv6 addresses for the interfaces connecting to PE1 and PE2, as well as for its own loopback interface, and enable IPv6 forwarding.
+JSON Configuration Example:
+Generated json
+{
+  "interfaces": {
+    "GigabitEthernet1/0/0": {
+      "ipv6_enabled": true,
+      "ipv6_address": "<ipv6_address_to_pe1>/<prefix_length>"
+    },
+    "GigabitEthernet2/0/0": {
+      "ipv6_enabled": true,
+      "ipv6_address": "<ipv6_address_to_pe2>/<prefix_length>"
+    },
+    "LoopBack1": {
+      "ipv6_enabled": true,
+      "ipv6_address": "<p_loopback_ipv6>/<prefix_length>"
+    }
+  }
+}
+Use code with caution.
+Json
+Step 2: Configure IS-IS
+Description: Configure the IS-IS process, set the NET, and enable the IPv6 topology. Then, activate IS-IS on all relevant interfaces to participate in the backbone IGP.
+JSON Configuration Example:
+Generated json
+{
+  "isis": {
+    "process_id": "<isis_process_id>",
+    "level": "level-1",
+    "cost_style": "wide",
+    "network_entity": "<p_net_value>",
+    "ipv6_topology_enabled": true
+  },
+  "isis_interface_config": [
+    { "interface_name": "GigabitEthernet1/0/0", "isis_ipv6_enable": "<isis_process_id>" },
+    { "interface_name": "GigabitEthernet2/0/0", "isis_ipv6_enable": "<isis_process_id>" },
+    { "interface_name": "LoopBack1", "isis_ipv6_enable": "<isis_process_id>" }
+  ]
+}
+Use code with caution.
+Json
+Step 3: Configure SRv6
+Description: Configure the source address for SRv6 encapsulation. Define the locator and a static End.PSP SID. In IS-IS, disable automatic SID allocation for the corresponding locator.
+JSON Configuration Example:
+Generated json
+{
+  "segment_routing_ipv6": {
+    "encapsulation_source_address": "<p_loopback_ipv6>",
+    "locator": {
+      "name": "<locator_name>",
+      "ipv6_prefix": "<p_locator_prefix>/<prefix_length>",
+      "static_length": "<static_length>",
+      "opcode": {
+        "sid_function": "::222",
+        "behavior": "end.psp"
+      }
+    }
+  },
+  "isis": {
+    "process_id": "<isis_process_id>",
+    "segment_routing_ipv6": {
+      "locator": "<locator_name>",
+      "auto_sid_disable": true
+    }
+  }
+}

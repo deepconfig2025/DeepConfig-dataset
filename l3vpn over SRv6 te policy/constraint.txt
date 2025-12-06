@@ -1,0 +1,56 @@
+SRv6 TE Policy and Traffic Steering Constraints
+
+SID Type Requirement: The configuration of an SRv6 TE Policy requires the use of an End SID or an End.X SID.
+
+
+Static Policy with Static SIDs: When using a statically configured SRv6 TE Policy, it is recommended that the user manually configures the SIDs and prohibits the use of dynamic SIDs. This is because if dynamic SIDs are used, their values may change after an IGP protocol restart, which would cause the static TE Policy to fail and require manual intervention to restore, making it unsuitable for large-scale deployment.
+
+Matching Principles for Traffic Steering: To successfully steer private network traffic into an SRv6 TE Policy, the following three conditions must be met simultaneously:
+
+
+Color Attribute Configuration: A Color extended community attribute must be configured for the private route. This is typically achieved by applying an ingress route-policy to the BGP peer .
+
+
+
+
+
+
+Tunnel Policy Configuration: A tunnel-policy must be configured and applied under the VPN instance to allow the private route to resolve to the SRv6 TE Policy .
+
+
+
+Endpoint and Color Matching: The private route's next-hop must be identical to the SRv6 TE Policy's Endpoint address, and the route's Color attribute value must be identical to the SRv6 TE Policy's Color value.
+
+VPN and Interface Configuration Constraints
+Order of Operations: The VPN instance (ip vpn-instance) must be created before an interface can be bound to it using the ip binding vpn-instance command.
+
+
+RT Matching Requirement: For PE devices at different sites (PE1 and PE2) to exchange routes for the same VPN, their configured VPN Targets (RTs) must match. In this example, both PEs are configured with 
+
+vpn-target 111:1 both for importing and exporting routes.
+
+
+
+Ping Operation within a VPN: When pinging a remote CE from a PE device that has multiple interfaces bound to the same VPN, the source IP address must be specified using the -a parameter to ensure a successful ping.
+
+Routing Protocol Configuration Constraints
+
+Underlying IGP Reachability: As a fundamental requirement, all PE and P devices within the autonomous system (PE1, P, PE2) must have IPv6 network reachability among themselves via an IGP (IS-IS in this case). This is the foundation for establishing BGP peerings and SRv6 tunnels.
+
+BGP Peering Relationships:
+
+
+Between PEs: An MP-IBGP peering must be established between PE1 and PE2, and the vpnv4 address family must be activated for this peering to exchange VPNv4 routes .
+
+
+
+Between PE and CE: An EBGP peering must be established between each PE and its connected CE. This BGP peering must be configured under the PE's VPN instance address family.
+
+
+SID Configuration Constraints
+
+End.DT4 SID Allocation: The End.DT4 SID, which is used for L3VPN, can be allocated dynamically via BGP or configured statically. When both methods are present, the static configuration takes precedence. This example explicitly uses the BGP dynamic allocation scheme.
+
+
+
+Static Opcode Configuration: If the BGP dynamic allocation scheme for End.DT4 SIDs is used, it is not necessary to also statically configure the opcode ... end-dt4 vpn-instance command for the locator.

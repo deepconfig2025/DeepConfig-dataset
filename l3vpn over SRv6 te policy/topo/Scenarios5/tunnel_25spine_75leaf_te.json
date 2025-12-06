@@ -1,0 +1,1412 @@
+{
+  "tunnel": {
+    "pe_pairs": [
+      {
+        "src_pe": "PE1",
+        "dst_pe": "PE2",
+        "transport": {
+          "type": "srv6",
+          "mode": "te",
+          "policy_name": "TE-PE1-PE2",
+          "segment_list": [
+            {
+              "node": "P1",
+              "sid": "${P1_SID}"
+            },
+            {
+              "node": "PE2",
+              "sid": "${PE2_SID}"
+            }
+          ]
+        }
+      },
+      {
+        "src_pe": "PE2",
+        "dst_pe": "PE1",
+        "transport": {
+          "type": "srv6",
+          "mode": "te",
+          "policy_name": "TE-PE2-PE1",
+          "segment_list": [
+            {
+              "node": "P1",
+              "sid": "${P1_SID}"
+            },
+            {
+              "node": "PE1",
+              "sid": "${PE1_SID}"
+            }
+          ]
+        }
+      },
+      {
+        "src_pe": "PE3",
+        "dst_pe": "PE4",
+        "transport": {
+          "type": "srv6",
+          "mode": "te",
+          "policy_name": "TE-PE3-PE4",
+          "segment_list": [
+            {
+              "node": "P2",
+              "sid": "${P2_SID}"
+            },
+            {
+              "node": "PE4",
+              "sid": "${PE4_SID}"
+            }
+          ]
+        }
+      },
+      {
+        "src_pe": "PE4",
+        "dst_pe": "PE3",
+        "transport": {
+          "type": "srv6",
+          "mode": "te",
+          "policy_name": "TE-PE4-PE3",
+          "segment_list": [
+            {
+              "node": "P2",
+              "sid": "${P2_SID}"
+            },
+            {
+              "node": "PE3",
+              "sid": "${PE3_SID}"
+            }
+          ]
+        }
+      },
+      {
+        "src_pe": "PE5",
+        "dst_pe": "PE6",
+        "transport": {
+          "type": "srv6",
+          "mode": "te",
+          "policy_name": "TE-PE5-PE6",
+          "segment_list": [
+            {
+              "node": "P3",
+              "sid": "${P3_SID}"
+            },
+            {
+              "node": "PE6",
+              "sid": "${PE6_SID}"
+            }
+          ]
+        }
+      },
+      {
+        "src_pe": "PE6",
+        "dst_pe": "PE5",
+        "transport": {
+          "type": "srv6",
+          "mode": "te",
+          "policy_name": "TE-PE6-PE5",
+          "segment_list": [
+            {
+              "node": "P3",
+              "sid": "${P3_SID}"
+            },
+            {
+              "node": "PE5",
+              "sid": "${PE5_SID}"
+            }
+          ]
+        }
+      },
+      {
+        "src_pe": "PE7",
+        "dst_pe": "PE8",
+        "transport": {
+          "type": "srv6",
+          "mode": "te",
+          "policy_name": "TE-PE7-PE8",
+          "segment_list": [
+            {
+              "node": "P4",
+              "sid": "${P4_SID}"
+            },
+            {
+              "node": "PE8",
+              "sid": "${PE8_SID}"
+            }
+          ]
+        }
+      },
+      {
+        "src_pe": "PE8",
+        "dst_pe": "PE7",
+        "transport": {
+          "type": "srv6",
+          "mode": "te",
+          "policy_name": "TE-PE8-PE7",
+          "segment_list": [
+            {
+              "node": "P4",
+              "sid": "${P4_SID}"
+            },
+            {
+              "node": "PE7",
+              "sid": "${PE7_SID}"
+            }
+          ]
+        }
+      },
+      {
+        "src_pe": "PE9",
+        "dst_pe": "PE10",
+        "transport": {
+          "type": "srv6",
+          "mode": "te",
+          "policy_name": "TE-PE9-PE10",
+          "segment_list": [
+            {
+              "node": "P5",
+              "sid": "${P5_SID}"
+            },
+            {
+              "node": "PE10",
+              "sid": "${PE10_SID}"
+            }
+          ]
+        }
+      },
+      {
+        "src_pe": "PE10",
+        "dst_pe": "PE9",
+        "transport": {
+          "type": "srv6",
+          "mode": "te",
+          "policy_name": "TE-PE10-PE9",
+          "segment_list": [
+            {
+              "node": "P5",
+              "sid": "${P5_SID}"
+            },
+            {
+              "node": "PE9",
+              "sid": "${PE9_SID}"
+            }
+          ]
+        }
+      },
+      {
+        "src_pe": "PE11",
+        "dst_pe": "PE12",
+        "transport": {
+          "type": "srv6",
+          "mode": "te",
+          "policy_name": "TE-PE11-PE12",
+          "segment_list": [
+            {
+              "node": "P6",
+              "sid": "${P6_SID}"
+            },
+            {
+              "node": "PE12",
+              "sid": "${PE12_SID}"
+            }
+          ]
+        }
+      },
+      {
+        "src_pe": "PE12",
+        "dst_pe": "PE11",
+        "transport": {
+          "type": "srv6",
+          "mode": "te",
+          "policy_name": "TE-PE12-PE11",
+          "segment_list": [
+            {
+              "node": "P6",
+              "sid": "${P6_SID}"
+            },
+            {
+              "node": "PE11",
+              "sid": "${PE11_SID}"
+            }
+          ]
+        }
+      },
+      {
+        "src_pe": "PE13",
+        "dst_pe": "PE14",
+        "transport": {
+          "type": "srv6",
+          "mode": "te",
+          "policy_name": "TE-PE13-PE14",
+          "segment_list": [
+            {
+              "node": "P7",
+              "sid": "${P7_SID}"
+            },
+            {
+              "node": "PE14",
+              "sid": "${PE14_SID}"
+            }
+          ]
+        }
+      },
+      {
+        "src_pe": "PE14",
+        "dst_pe": "PE13",
+        "transport": {
+          "type": "srv6",
+          "mode": "te",
+          "policy_name": "TE-PE14-PE13",
+          "segment_list": [
+            {
+              "node": "P7",
+              "sid": "${P7_SID}"
+            },
+            {
+              "node": "PE13",
+              "sid": "${PE13_SID}"
+            }
+          ]
+        }
+      },
+      {
+        "src_pe": "PE15",
+        "dst_pe": "PE16",
+        "transport": {
+          "type": "srv6",
+          "mode": "te",
+          "policy_name": "TE-PE15-PE16",
+          "segment_list": [
+            {
+              "node": "P8",
+              "sid": "${P8_SID}"
+            },
+            {
+              "node": "PE16",
+              "sid": "${PE16_SID}"
+            }
+          ]
+        }
+      },
+      {
+        "src_pe": "PE16",
+        "dst_pe": "PE15",
+        "transport": {
+          "type": "srv6",
+          "mode": "te",
+          "policy_name": "TE-PE16-PE15",
+          "segment_list": [
+            {
+              "node": "P8",
+              "sid": "${P8_SID}"
+            },
+            {
+              "node": "PE15",
+              "sid": "${PE15_SID}"
+            }
+          ]
+        }
+      },
+      {
+        "src_pe": "PE17",
+        "dst_pe": "PE18",
+        "transport": {
+          "type": "srv6",
+          "mode": "te",
+          "policy_name": "TE-PE17-PE18",
+          "segment_list": [
+            {
+              "node": "P9",
+              "sid": "${P9_SID}"
+            },
+            {
+              "node": "PE18",
+              "sid": "${PE18_SID}"
+            }
+          ]
+        }
+      },
+      {
+        "src_pe": "PE18",
+        "dst_pe": "PE17",
+        "transport": {
+          "type": "srv6",
+          "mode": "te",
+          "policy_name": "TE-PE18-PE17",
+          "segment_list": [
+            {
+              "node": "P9",
+              "sid": "${P9_SID}"
+            },
+            {
+              "node": "PE17",
+              "sid": "${PE17_SID}"
+            }
+          ]
+        }
+      },
+      {
+        "src_pe": "PE19",
+        "dst_pe": "PE20",
+        "transport": {
+          "type": "srv6",
+          "mode": "te",
+          "policy_name": "TE-PE19-PE20",
+          "segment_list": [
+            {
+              "node": "P10",
+              "sid": "${P10_SID}"
+            },
+            {
+              "node": "PE20",
+              "sid": "${PE20_SID}"
+            }
+          ]
+        }
+      },
+      {
+        "src_pe": "PE20",
+        "dst_pe": "PE19",
+        "transport": {
+          "type": "srv6",
+          "mode": "te",
+          "policy_name": "TE-PE20-PE19",
+          "segment_list": [
+            {
+              "node": "P10",
+              "sid": "${P10_SID}"
+            },
+            {
+              "node": "PE19",
+              "sid": "${PE19_SID}"
+            }
+          ]
+        }
+      },
+      {
+        "src_pe": "PE21",
+        "dst_pe": "PE22",
+        "transport": {
+          "type": "srv6",
+          "mode": "te",
+          "policy_name": "TE-PE21-PE22",
+          "segment_list": [
+            {
+              "node": "P11",
+              "sid": "${P11_SID}"
+            },
+            {
+              "node": "PE22",
+              "sid": "${PE22_SID}"
+            }
+          ]
+        }
+      },
+      {
+        "src_pe": "PE22",
+        "dst_pe": "PE21",
+        "transport": {
+          "type": "srv6",
+          "mode": "te",
+          "policy_name": "TE-PE22-PE21",
+          "segment_list": [
+            {
+              "node": "P11",
+              "sid": "${P11_SID}"
+            },
+            {
+              "node": "PE21",
+              "sid": "${PE21_SID}"
+            }
+          ]
+        }
+      },
+      {
+        "src_pe": "PE23",
+        "dst_pe": "PE24",
+        "transport": {
+          "type": "srv6",
+          "mode": "te",
+          "policy_name": "TE-PE23-PE24",
+          "segment_list": [
+            {
+              "node": "P12",
+              "sid": "${P12_SID}"
+            },
+            {
+              "node": "PE24",
+              "sid": "${PE24_SID}"
+            }
+          ]
+        }
+      },
+      {
+        "src_pe": "PE24",
+        "dst_pe": "PE23",
+        "transport": {
+          "type": "srv6",
+          "mode": "te",
+          "policy_name": "TE-PE24-PE23",
+          "segment_list": [
+            {
+              "node": "P12",
+              "sid": "${P12_SID}"
+            },
+            {
+              "node": "PE23",
+              "sid": "${PE23_SID}"
+            }
+          ]
+        }
+      },
+      {
+        "src_pe": "PE25",
+        "dst_pe": "PE26",
+        "transport": {
+          "type": "srv6",
+          "mode": "te",
+          "policy_name": "TE-PE25-PE26",
+          "segment_list": [
+            {
+              "node": "P13",
+              "sid": "${P13_SID}"
+            },
+            {
+              "node": "PE26",
+              "sid": "${PE26_SID}"
+            }
+          ]
+        }
+      },
+      {
+        "src_pe": "PE26",
+        "dst_pe": "PE25",
+        "transport": {
+          "type": "srv6",
+          "mode": "te",
+          "policy_name": "TE-PE26-PE25",
+          "segment_list": [
+            {
+              "node": "P13",
+              "sid": "${P13_SID}"
+            },
+            {
+              "node": "PE25",
+              "sid": "${PE25_SID}"
+            }
+          ]
+        }
+      },
+      {
+        "src_pe": "PE27",
+        "dst_pe": "PE28",
+        "transport": {
+          "type": "srv6",
+          "mode": "te",
+          "policy_name": "TE-PE27-PE28",
+          "segment_list": [
+            {
+              "node": "P14",
+              "sid": "${P14_SID}"
+            },
+            {
+              "node": "PE28",
+              "sid": "${PE28_SID}"
+            }
+          ]
+        }
+      },
+      {
+        "src_pe": "PE28",
+        "dst_pe": "PE27",
+        "transport": {
+          "type": "srv6",
+          "mode": "te",
+          "policy_name": "TE-PE28-PE27",
+          "segment_list": [
+            {
+              "node": "P14",
+              "sid": "${P14_SID}"
+            },
+            {
+              "node": "PE27",
+              "sid": "${PE27_SID}"
+            }
+          ]
+        }
+      },
+      {
+        "src_pe": "PE29",
+        "dst_pe": "PE30",
+        "transport": {
+          "type": "srv6",
+          "mode": "te",
+          "policy_name": "TE-PE29-PE30",
+          "segment_list": [
+            {
+              "node": "P15",
+              "sid": "${P15_SID}"
+            },
+            {
+              "node": "PE30",
+              "sid": "${PE30_SID}"
+            }
+          ]
+        }
+      },
+      {
+        "src_pe": "PE30",
+        "dst_pe": "PE29",
+        "transport": {
+          "type": "srv6",
+          "mode": "te",
+          "policy_name": "TE-PE30-PE29",
+          "segment_list": [
+            {
+              "node": "P15",
+              "sid": "${P15_SID}"
+            },
+            {
+              "node": "PE29",
+              "sid": "${PE29_SID}"
+            }
+          ]
+        }
+      },
+      {
+        "src_pe": "PE31",
+        "dst_pe": "PE32",
+        "transport": {
+          "type": "srv6",
+          "mode": "te",
+          "policy_name": "TE-PE31-PE32",
+          "segment_list": [
+            {
+              "node": "P16",
+              "sid": "${P16_SID}"
+            },
+            {
+              "node": "PE32",
+              "sid": "${PE32_SID}"
+            }
+          ]
+        }
+      },
+      {
+        "src_pe": "PE32",
+        "dst_pe": "PE31",
+        "transport": {
+          "type": "srv6",
+          "mode": "te",
+          "policy_name": "TE-PE32-PE31",
+          "segment_list": [
+            {
+              "node": "P16",
+              "sid": "${P16_SID}"
+            },
+            {
+              "node": "PE31",
+              "sid": "${PE31_SID}"
+            }
+          ]
+        }
+      },
+      {
+        "src_pe": "PE33",
+        "dst_pe": "PE34",
+        "transport": {
+          "type": "srv6",
+          "mode": "te",
+          "policy_name": "TE-PE33-PE34",
+          "segment_list": [
+            {
+              "node": "P17",
+              "sid": "${P17_SID}"
+            },
+            {
+              "node": "PE34",
+              "sid": "${PE34_SID}"
+            }
+          ]
+        }
+      },
+      {
+        "src_pe": "PE34",
+        "dst_pe": "PE33",
+        "transport": {
+          "type": "srv6",
+          "mode": "te",
+          "policy_name": "TE-PE34-PE33",
+          "segment_list": [
+            {
+              "node": "P17",
+              "sid": "${P17_SID}"
+            },
+            {
+              "node": "PE33",
+              "sid": "${PE33_SID}"
+            }
+          ]
+        }
+      },
+      {
+        "src_pe": "PE35",
+        "dst_pe": "PE36",
+        "transport": {
+          "type": "srv6",
+          "mode": "te",
+          "policy_name": "TE-PE35-PE36",
+          "segment_list": [
+            {
+              "node": "P18",
+              "sid": "${P18_SID}"
+            },
+            {
+              "node": "PE36",
+              "sid": "${PE36_SID}"
+            }
+          ]
+        }
+      },
+      {
+        "src_pe": "PE36",
+        "dst_pe": "PE35",
+        "transport": {
+          "type": "srv6",
+          "mode": "te",
+          "policy_name": "TE-PE36-PE35",
+          "segment_list": [
+            {
+              "node": "P18",
+              "sid": "${P18_SID}"
+            },
+            {
+              "node": "PE35",
+              "sid": "${PE35_SID}"
+            }
+          ]
+        }
+      },
+      {
+        "src_pe": "PE37",
+        "dst_pe": "PE38",
+        "transport": {
+          "type": "srv6",
+          "mode": "te",
+          "policy_name": "TE-PE37-PE38",
+          "segment_list": [
+            {
+              "node": "P19",
+              "sid": "${P19_SID}"
+            },
+            {
+              "node": "PE38",
+              "sid": "${PE38_SID}"
+            }
+          ]
+        }
+      },
+      {
+        "src_pe": "PE38",
+        "dst_pe": "PE37",
+        "transport": {
+          "type": "srv6",
+          "mode": "te",
+          "policy_name": "TE-PE38-PE37",
+          "segment_list": [
+            {
+              "node": "P19",
+              "sid": "${P19_SID}"
+            },
+            {
+              "node": "PE37",
+              "sid": "${PE37_SID}"
+            }
+          ]
+        }
+      },
+      {
+        "src_pe": "PE39",
+        "dst_pe": "PE40",
+        "transport": {
+          "type": "srv6",
+          "mode": "te",
+          "policy_name": "TE-PE39-PE40",
+          "segment_list": [
+            {
+              "node": "P20",
+              "sid": "${P20_SID}"
+            },
+            {
+              "node": "PE40",
+              "sid": "${PE40_SID}"
+            }
+          ]
+        }
+      },
+      {
+        "src_pe": "PE40",
+        "dst_pe": "PE39",
+        "transport": {
+          "type": "srv6",
+          "mode": "te",
+          "policy_name": "TE-PE40-PE39",
+          "segment_list": [
+            {
+              "node": "P20",
+              "sid": "${P20_SID}"
+            },
+            {
+              "node": "PE39",
+              "sid": "${PE39_SID}"
+            }
+          ]
+        }
+      },
+      {
+        "src_pe": "PE41",
+        "dst_pe": "PE42",
+        "transport": {
+          "type": "srv6",
+          "mode": "te",
+          "policy_name": "TE-PE41-PE42",
+          "segment_list": [
+            {
+              "node": "P21",
+              "sid": "${P21_SID}"
+            },
+            {
+              "node": "PE42",
+              "sid": "${PE42_SID}"
+            }
+          ]
+        }
+      },
+      {
+        "src_pe": "PE42",
+        "dst_pe": "PE41",
+        "transport": {
+          "type": "srv6",
+          "mode": "te",
+          "policy_name": "TE-PE42-PE41",
+          "segment_list": [
+            {
+              "node": "P21",
+              "sid": "${P21_SID}"
+            },
+            {
+              "node": "PE41",
+              "sid": "${PE41_SID}"
+            }
+          ]
+        }
+      },
+      {
+        "src_pe": "PE43",
+        "dst_pe": "PE44",
+        "transport": {
+          "type": "srv6",
+          "mode": "te",
+          "policy_name": "TE-PE43-PE44",
+          "segment_list": [
+            {
+              "node": "P22",
+              "sid": "${P22_SID}"
+            },
+            {
+              "node": "PE44",
+              "sid": "${PE44_SID}"
+            }
+          ]
+        }
+      },
+      {
+        "src_pe": "PE44",
+        "dst_pe": "PE43",
+        "transport": {
+          "type": "srv6",
+          "mode": "te",
+          "policy_name": "TE-PE44-PE43",
+          "segment_list": [
+            {
+              "node": "P22",
+              "sid": "${P22_SID}"
+            },
+            {
+              "node": "PE43",
+              "sid": "${PE43_SID}"
+            }
+          ]
+        }
+      },
+      {
+        "src_pe": "PE45",
+        "dst_pe": "PE46",
+        "transport": {
+          "type": "srv6",
+          "mode": "te",
+          "policy_name": "TE-PE45-PE46",
+          "segment_list": [
+            {
+              "node": "P23",
+              "sid": "${P23_SID}"
+            },
+            {
+              "node": "PE46",
+              "sid": "${PE46_SID}"
+            }
+          ]
+        }
+      },
+      {
+        "src_pe": "PE46",
+        "dst_pe": "PE45",
+        "transport": {
+          "type": "srv6",
+          "mode": "te",
+          "policy_name": "TE-PE46-PE45",
+          "segment_list": [
+            {
+              "node": "P23",
+              "sid": "${P23_SID}"
+            },
+            {
+              "node": "PE45",
+              "sid": "${PE45_SID}"
+            }
+          ]
+        }
+      },
+      {
+        "src_pe": "PE47",
+        "dst_pe": "PE48",
+        "transport": {
+          "type": "srv6",
+          "mode": "te",
+          "policy_name": "TE-PE47-PE48",
+          "segment_list": [
+            {
+              "node": "P24",
+              "sid": "${P24_SID}"
+            },
+            {
+              "node": "PE48",
+              "sid": "${PE48_SID}"
+            }
+          ]
+        }
+      },
+      {
+        "src_pe": "PE48",
+        "dst_pe": "PE47",
+        "transport": {
+          "type": "srv6",
+          "mode": "te",
+          "policy_name": "TE-PE48-PE47",
+          "segment_list": [
+            {
+              "node": "P24",
+              "sid": "${P24_SID}"
+            },
+            {
+              "node": "PE47",
+              "sid": "${PE47_SID}"
+            }
+          ]
+        }
+      },
+      {
+        "src_pe": "PE49",
+        "dst_pe": "PE50",
+        "transport": {
+          "type": "srv6",
+          "mode": "te",
+          "policy_name": "TE-PE49-PE50",
+          "segment_list": [
+            {
+              "node": "P25",
+              "sid": "${P25_SID}"
+            },
+            {
+              "node": "PE50",
+              "sid": "${PE50_SID}"
+            }
+          ]
+        }
+      },
+      {
+        "src_pe": "PE50",
+        "dst_pe": "PE49",
+        "transport": {
+          "type": "srv6",
+          "mode": "te",
+          "policy_name": "TE-PE50-PE49",
+          "segment_list": [
+            {
+              "node": "P25",
+              "sid": "${P25_SID}"
+            },
+            {
+              "node": "PE49",
+              "sid": "${PE49_SID}"
+            }
+          ]
+        }
+      },
+      {
+        "src_pe": "PE51",
+        "dst_pe": "PE52",
+        "transport": {
+          "type": "srv6",
+          "mode": "te",
+          "policy_name": "TE-PE51-PE52",
+          "segment_list": [
+            {
+              "node": "P1",
+              "sid": "${P1_SID}"
+            },
+            {
+              "node": "PE52",
+              "sid": "${PE52_SID}"
+            }
+          ]
+        }
+      },
+      {
+        "src_pe": "PE52",
+        "dst_pe": "PE51",
+        "transport": {
+          "type": "srv6",
+          "mode": "te",
+          "policy_name": "TE-PE52-PE51",
+          "segment_list": [
+            {
+              "node": "P1",
+              "sid": "${P1_SID}"
+            },
+            {
+              "node": "PE51",
+              "sid": "${PE51_SID}"
+            }
+          ]
+        }
+      },
+      {
+        "src_pe": "PE53",
+        "dst_pe": "PE54",
+        "transport": {
+          "type": "srv6",
+          "mode": "te",
+          "policy_name": "TE-PE53-PE54",
+          "segment_list": [
+            {
+              "node": "P2",
+              "sid": "${P2_SID}"
+            },
+            {
+              "node": "PE54",
+              "sid": "${PE54_SID}"
+            }
+          ]
+        }
+      },
+      {
+        "src_pe": "PE54",
+        "dst_pe": "PE53",
+        "transport": {
+          "type": "srv6",
+          "mode": "te",
+          "policy_name": "TE-PE54-PE53",
+          "segment_list": [
+            {
+              "node": "P2",
+              "sid": "${P2_SID}"
+            },
+            {
+              "node": "PE53",
+              "sid": "${PE53_SID}"
+            }
+          ]
+        }
+      },
+      {
+        "src_pe": "PE55",
+        "dst_pe": "PE56",
+        "transport": {
+          "type": "srv6",
+          "mode": "te",
+          "policy_name": "TE-PE55-PE56",
+          "segment_list": [
+            {
+              "node": "P3",
+              "sid": "${P3_SID}"
+            },
+            {
+              "node": "PE56",
+              "sid": "${PE56_SID}"
+            }
+          ]
+        }
+      },
+      {
+        "src_pe": "PE56",
+        "dst_pe": "PE55",
+        "transport": {
+          "type": "srv6",
+          "mode": "te",
+          "policy_name": "TE-PE56-PE55",
+          "segment_list": [
+            {
+              "node": "P3",
+              "sid": "${P3_SID}"
+            },
+            {
+              "node": "PE55",
+              "sid": "${PE55_SID}"
+            }
+          ]
+        }
+      },
+      {
+        "src_pe": "PE57",
+        "dst_pe": "PE58",
+        "transport": {
+          "type": "srv6",
+          "mode": "te",
+          "policy_name": "TE-PE57-PE58",
+          "segment_list": [
+            {
+              "node": "P4",
+              "sid": "${P4_SID}"
+            },
+            {
+              "node": "PE58",
+              "sid": "${PE58_SID}"
+            }
+          ]
+        }
+      },
+      {
+        "src_pe": "PE58",
+        "dst_pe": "PE57",
+        "transport": {
+          "type": "srv6",
+          "mode": "te",
+          "policy_name": "TE-PE58-PE57",
+          "segment_list": [
+            {
+              "node": "P4",
+              "sid": "${P4_SID}"
+            },
+            {
+              "node": "PE57",
+              "sid": "${PE57_SID}"
+            }
+          ]
+        }
+      },
+      {
+        "src_pe": "PE59",
+        "dst_pe": "PE60",
+        "transport": {
+          "type": "srv6",
+          "mode": "te",
+          "policy_name": "TE-PE59-PE60",
+          "segment_list": [
+            {
+              "node": "P5",
+              "sid": "${P5_SID}"
+            },
+            {
+              "node": "PE60",
+              "sid": "${PE60_SID}"
+            }
+          ]
+        }
+      },
+      {
+        "src_pe": "PE60",
+        "dst_pe": "PE59",
+        "transport": {
+          "type": "srv6",
+          "mode": "te",
+          "policy_name": "TE-PE60-PE59",
+          "segment_list": [
+            {
+              "node": "P5",
+              "sid": "${P5_SID}"
+            },
+            {
+              "node": "PE59",
+              "sid": "${PE59_SID}"
+            }
+          ]
+        }
+      },
+      {
+        "src_pe": "PE61",
+        "dst_pe": "PE62",
+        "transport": {
+          "type": "srv6",
+          "mode": "te",
+          "policy_name": "TE-PE61-PE62",
+          "segment_list": [
+            {
+              "node": "P6",
+              "sid": "${P6_SID}"
+            },
+            {
+              "node": "PE62",
+              "sid": "${PE62_SID}"
+            }
+          ]
+        }
+      },
+      {
+        "src_pe": "PE62",
+        "dst_pe": "PE61",
+        "transport": {
+          "type": "srv6",
+          "mode": "te",
+          "policy_name": "TE-PE62-PE61",
+          "segment_list": [
+            {
+              "node": "P6",
+              "sid": "${P6_SID}"
+            },
+            {
+              "node": "PE61",
+              "sid": "${PE61_SID}"
+            }
+          ]
+        }
+      },
+      {
+        "src_pe": "PE63",
+        "dst_pe": "PE64",
+        "transport": {
+          "type": "srv6",
+          "mode": "te",
+          "policy_name": "TE-PE63-PE64",
+          "segment_list": [
+            {
+              "node": "P7",
+              "sid": "${P7_SID}"
+            },
+            {
+              "node": "PE64",
+              "sid": "${PE64_SID}"
+            }
+          ]
+        }
+      },
+      {
+        "src_pe": "PE64",
+        "dst_pe": "PE63",
+        "transport": {
+          "type": "srv6",
+          "mode": "te",
+          "policy_name": "TE-PE64-PE63",
+          "segment_list": [
+            {
+              "node": "P7",
+              "sid": "${P7_SID}"
+            },
+            {
+              "node": "PE63",
+              "sid": "${PE63_SID}"
+            }
+          ]
+        }
+      },
+      {
+        "src_pe": "PE65",
+        "dst_pe": "PE66",
+        "transport": {
+          "type": "srv6",
+          "mode": "te",
+          "policy_name": "TE-PE65-PE66",
+          "segment_list": [
+            {
+              "node": "P8",
+              "sid": "${P8_SID}"
+            },
+            {
+              "node": "PE66",
+              "sid": "${PE66_SID}"
+            }
+          ]
+        }
+      },
+      {
+        "src_pe": "PE66",
+        "dst_pe": "PE65",
+        "transport": {
+          "type": "srv6",
+          "mode": "te",
+          "policy_name": "TE-PE66-PE65",
+          "segment_list": [
+            {
+              "node": "P8",
+              "sid": "${P8_SID}"
+            },
+            {
+              "node": "PE65",
+              "sid": "${PE65_SID}"
+            }
+          ]
+        }
+      },
+      {
+        "src_pe": "PE67",
+        "dst_pe": "PE68",
+        "transport": {
+          "type": "srv6",
+          "mode": "te",
+          "policy_name": "TE-PE67-PE68",
+          "segment_list": [
+            {
+              "node": "P9",
+              "sid": "${P9_SID}"
+            },
+            {
+              "node": "PE68",
+              "sid": "${PE68_SID}"
+            }
+          ]
+        }
+      },
+      {
+        "src_pe": "PE68",
+        "dst_pe": "PE67",
+        "transport": {
+          "type": "srv6",
+          "mode": "te",
+          "policy_name": "TE-PE68-PE67",
+          "segment_list": [
+            {
+              "node": "P9",
+              "sid": "${P9_SID}"
+            },
+            {
+              "node": "PE67",
+              "sid": "${PE67_SID}"
+            }
+          ]
+        }
+      },
+      {
+        "src_pe": "PE69",
+        "dst_pe": "PE70",
+        "transport": {
+          "type": "srv6",
+          "mode": "te",
+          "policy_name": "TE-PE69-PE70",
+          "segment_list": [
+            {
+              "node": "P10",
+              "sid": "${P10_SID}"
+            },
+            {
+              "node": "PE70",
+              "sid": "${PE70_SID}"
+            }
+          ]
+        }
+      },
+      {
+        "src_pe": "PE70",
+        "dst_pe": "PE69",
+        "transport": {
+          "type": "srv6",
+          "mode": "te",
+          "policy_name": "TE-PE70-PE69",
+          "segment_list": [
+            {
+              "node": "P10",
+              "sid": "${P10_SID}"
+            },
+            {
+              "node": "PE69",
+              "sid": "${PE69_SID}"
+            }
+          ]
+        }
+      },
+      {
+        "src_pe": "PE71",
+        "dst_pe": "PE72",
+        "transport": {
+          "type": "srv6",
+          "mode": "te",
+          "policy_name": "TE-PE71-PE72",
+          "segment_list": [
+            {
+              "node": "P11",
+              "sid": "${P11_SID}"
+            },
+            {
+              "node": "PE72",
+              "sid": "${PE72_SID}"
+            }
+          ]
+        }
+      },
+      {
+        "src_pe": "PE72",
+        "dst_pe": "PE71",
+        "transport": {
+          "type": "srv6",
+          "mode": "te",
+          "policy_name": "TE-PE72-PE71",
+          "segment_list": [
+            {
+              "node": "P11",
+              "sid": "${P11_SID}"
+            },
+            {
+              "node": "PE71",
+              "sid": "${PE71_SID}"
+            }
+          ]
+        }
+      },
+      {
+        "src_pe": "PE73",
+        "dst_pe": "PE74",
+        "transport": {
+          "type": "srv6",
+          "mode": "te",
+          "policy_name": "TE-PE73-PE74",
+          "segment_list": [
+            {
+              "node": "P12",
+              "sid": "${P12_SID}"
+            },
+            {
+              "node": "PE74",
+              "sid": "${PE74_SID}"
+            }
+          ]
+        }
+      },
+      {
+        "src_pe": "PE74",
+        "dst_pe": "PE73",
+        "transport": {
+          "type": "srv6",
+          "mode": "te",
+          "policy_name": "TE-PE74-PE73",
+          "segment_list": [
+            {
+              "node": "P12",
+              "sid": "${P12_SID}"
+            },
+            {
+              "node": "PE73",
+              "sid": "${PE73_SID}"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

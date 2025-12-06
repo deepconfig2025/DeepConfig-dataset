@@ -1,0 +1,135 @@
+{
+  "overlay": {
+    "nodes": [
+      { "id": "CE1", "role": "ce" },
+      { "id": "CE2", "role": "ce" },
+      { "id": "PE1", "role": "pe" },
+      { "id": "PE2", "role": "pe" }
+    ],
+
+    "access_links": [
+      {
+        "type": "ce-pe",
+        "ce": "CE1",
+        "pe": "PE1",
+        "vpn_name": "CustA",
+        "vrf": "CustA",
+        "routing_protocol": "ebgp"
+      },
+      {
+        "type": "ce-pe",
+        "ce": "CE2",
+        "pe": "PE2",
+        "vpn_name": "CustA",
+        "vrf": "CustA",
+        "routing_protocol": "ebgp"
+      }
+    ],
+
+    "vpn_links": [
+      {
+        "type": "pe-pe-vpn",
+        "vpn_name": "CustA",
+        "vpn_type": "l3vpn",
+        "src_pe": "PE1",
+        "dst_pe": "PE2",
+        "endpoints": [
+          { "pe": "PE1", "vrf": "CustA" },
+          { "pe": "PE2", "vrf": "CustA" }
+        ],
+        "transport": "srv6-te-policy",
+        "tunnel_id": "TE-PE1-PE2"
+      },
+      {
+        "type": "pe-pe-vpn",
+        "vpn_name": "CustA",
+        "vpn_type": "l3vpn",
+        "src_pe": "PE2",
+        "dst_pe": "PE1",
+        "endpoints": [
+          { "pe": "PE1", "vrf": "CustA" },
+          { "pe": "PE2", "vrf": "CustA" }
+        ],
+        "transport": "srv6-te-policy",
+        "tunnel_id": "TE-PE2-PE1"
+      }
+    ]
+  }
+}
+
+
+
+{
+  "tunnel": {
+    "pe_pairs": [
+      {
+        "src_pe": "PE1",
+        "dst_pe": "PE2",
+        "transport": {
+          "type": "srv6",
+          "mode": "te",
+          "policy_name": "TE-PE1-PE2",
+          "segment_list": [
+            { "node": "P1",  "sid": "${P1_SID}" },
+            { "node": "PE2", "sid": "${PE2_SID}" }
+          ]
+        }
+      },
+      {
+        "src_pe": "PE2",
+        "dst_pe": "PE1",
+        "transport": {
+          "type": "srv6",
+          "mode": "te",
+          "policy_name": "TE-PE2-PE1",
+          "segment_list": [
+            { "node": "P1",  "sid": "${P1_SID}" },
+            { "node": "PE1", "sid": "${PE1_SID}" }
+          ]
+        }
+      }
+    ]
+  }
+}
+
+
+{
+  "underlay": {
+    "nodes": [
+      { "id": "P1",  "role": "p"  },
+      { "id": "PE1", "role": "pe" },
+      { "id": "PE2", "role": "pe" },
+      { "id": "CE1", "role": "ce" },
+      { "id": "CE2", "role": "ce" }
+    ],
+
+    "links": [
+      {
+        "endpoints": [
+          { "node": "CE1", "if": "Gi0/0/0" },
+          { "node": "PE1", "if": "Gi0/1/0" }
+        ]
+      },
+      {
+        "endpoints": [
+          { "node": "PE1", "if": "Gi0/0/0" },
+          { "node": "P1",  "if": "Gi0/0/0" }
+        ],
+        "metric": 10
+      },
+      {
+        "endpoints": [
+          { "node": "P1",  "if": "Gi0/0/1" },
+          { "node": "PE2", "if": "Gi0/0/0" }
+        ],
+        "metric": 10
+      },
+      {
+        "endpoints": [
+          { "node": "CE2", "if": "Gi0/0/0" },
+          { "node": "PE2", "if": "Gi0/1/0" }
+        ]
+      }
+    ]
+  }
+}

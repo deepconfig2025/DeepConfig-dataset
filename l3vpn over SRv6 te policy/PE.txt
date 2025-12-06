@@ -1,0 +1,230 @@
+Step 1: Enable IPv6 and Configure Interface Addresses
+Description: Enable IPv6 forwarding capabilities. Configure an IPv6 address for the interface connecting to the P router (GigabitEthernet1/0/0) and for the loopback interface (LoopBack1) which will be used for BGP peering and as the SRv6 source address.
+JSON Configuration Example:
+Generated json
+{
+  "interfaces": {
+    "GigabitEthernet1/0/0": {
+      "ipv6_enabled": true,
+      "ipv6_address": "<ipv6_address_to_p>/<prefix_length>"
+    },
+    "LoopBack1": {
+      "ipv6_enabled": true,
+      "ipv6_address": "<pe1_loopback_ipv6>/<prefix_length>"
+    }
+  }
+}
+Use code with caution.
+Json
+Step 2: Configure Basic IS-IS Functionality
+Description: Create and enter the IS-IS process. Set the area type to Level-1, the cost style to wide to support advanced features, and configure the node's Network Entity Title (NET). Additionally, enable the IPv6 topology.
+JSON Configuration Example:
+Generated json
+{
+  "isis": {
+    "process_id": "<isis_process_id>",
+    "level": "level-1",
+    "cost_style": "wide",
+    "network_entity": "<pe1_net_value>",
+    "ipv6_topology_enabled": true
+  }
+}
+Use code with caution.
+Json
+Step 3: Enable IS-IS on Interfaces
+Description: Activate the IS-IS process for IPv6 on the interface connecting to the P router and on the LoopBack1 interface. This allows them to send and receive IS-IS packets to establish adjacencies.
+JSON Configuration Example:
+Generated json
+{
+  "isis_interface_config": [
+    {
+      "interface_name": "GigabitEthernet1/0/0",
+      "isis_ipv6_enable": "<isis_process_id>"
+    },
+    {
+      "interface_name": "LoopBack1",
+      "isis_ipv6_enable": "<isis_process_id>"
+    }
+  ]
+}
+Use code with caution.
+Json
+Step 4: Configure VPN Instance and Interface Binding
+Description: Create a VPN instance named vpna. Under its IPv4 address family, configure the Route Distinguisher (RD) and VPN-Target (RT). Then, bind the interface connecting to CE1 (GigabitEthernet2/0/0) to this VPN instance and configure its interconnecting IPv4 address.
+JSON Configuration Example:
+Generated json
+{
+  "vpn_instance": {
+    "name": "<vpn_instance_name>",
+    "ipv4_family": {
+      "route_distinguisher": "<pe1_rd_value>",
+      "vpn_target": {
+        "value": "<rt_value>",
+        "direction": "both"
+      }
+    }
+  },
+  "interface": {
+    "name": "GigabitEthernet2/0/0",
+    "vpn_instance_binding": "<vpn_instance_name>",
+    "ipv4_address": "<ipv4_address_to_ce1>/<prefix_length>"
+  }
+}
+Use code with caution.
+Json
+Step 5: Configure EBGP Peering between PE and CE
+Description: Configure the BGP process and set its router-id. Under the VPN instance's IPv4 address family, establish an EBGP peer relationship with CE1 and import the directly connected routes from the CE.
+JSON Configuration Example:
+Generated json
+{
+  "bgp": {
+    "as_number": "<backbone_as_number>",
+    "router_id": "<pe1_router_id>",
+    "vpn_instance_family": {
+      "name": "<vpn_instance_name>",
+      "family": "ipv4",
+      "import_route": "direct",
+      "peer": {
+        "address": "<ce1_interface_ip>",
+        "remote_as": "<ce1_as_number>"
+      }
+    }
+  }
+}
+Use code with caution.
+Json
+Step 6: Configure MP-IBGP Peering between PEs
+Description: Use the loopback interface addresses to establish an MP-IBGP peer relationship with PE2. Activate this peer under the BGP VPNv4 address family to enable the exchange of VPNv4 routes.
+JSON Configuration Example:
+Generated json
+{
+  "bgp": {
+    "as_number": "<backbone_as_number>",
+    "peer": {
+      "address": "<pe2_loopback_ipv6>",
+      "remote_as": "<backbone_as_number>",
+      "connect_interface": "LoopBack1"
+    },
+    "vpnv4_family": {
+      "peer": {
+        "address": "<pe2_loopback_ipv6>",
+        "enabled": true
+      }
+    }
+  }
+}
+Use code with caution.
+Json
+Step 7: Configure SRv6 Base and Locator
+Description: Enable SRv6 and specify the source IPv6 address for encapsulation. Configure a locator to define the address space for SIDs, and within this space, statically define a SID with End.PSP behavior.
+JSON Configuration Example:
+Generated json
+{
+  "segment_routing_ipv6": {
+    "encapsulation_source_address": "<pe1_loopback_ipv6>",
+    "locator": {
+      "name": "<locator_name>",
+      "ipv6_prefix": "<pe1_locator_prefix>/<prefix_length>",
+      "static_length": "<static_length>",
+      "opcode": {
+        "sid_function": "::111",
+        "behavior": "end.psp"
+      }
+    }
+  }
+}
+Use code with caution.
+Json
+Step 8: Configure SRv6 Capabilities for BGP and IS-IS
+Description: In the BGP VPNv4 address family, enable the advertisement of the prefix-sid attribute to the PE2 peer. Under the VPN instance, enable SRv6 TE and associate it with the configured locator. In IS-IS, disable automatic SID allocation for the locator to ensure manually configured SIDs take precedence.
+JSON Configuration Example:
+Generated json
+{
+  "bgp": {
+    "as_number": "<backbone_as_number>",
+    "vpnv4_family": {
+      "peer": {
+        "address": "<pe2_loopback_ipv6>",
+        "enable_prefix_sid": true
+      }
+    },
+    "vpn_instance_family": {
+      "name": "<vpn_instance_name>",
+      "family": "ipv4",
+      "segment_routing_ipv6": {
+        "traffic_engineer": "best-effort",
+        "locator": "<locator_name>"
+      }
+    }
+  },
+  "isis": {
+    "process_id": "<isis_process_id>",
+    "segment_routing_ipv6": {
+      "locator": "<locator_name>",
+      "auto_sid_disable": true
+    }
+  }
+}
+Use code with caution.
+Json
+Step 9: Configure SRv6 TE Policy
+Description: First, create a segment-list that explicitly defines the path for packets (P node SID and PE2 node SID). Next, create an srv6-te policy identified by an endpoint (PE2's address) and a color, and assign it a binding-sid. Finally, point the policy's candidate path to the previously created segment-list.
+JSON Configuration Example:
+Generated json
+{
+  "segment_routing_ipv6": {
+    "segment_list": {
+      "name": "<segment_list_name>",
+      "segments": [
+        { "index": 5, "sid": "<p_node_sid>" },
+        { "index": 10, "sid": "<pe2_end_psp_sid>" }
+      ]
+    },
+    "te_policy": {
+      "name": "<policy_name>",
+      "locator": "<locator_name>",
+      "endpoint": "<pe2_loopback_ipv6>",
+      "color": "<color_value>",
+      "binding_sid": "<pe1_binding_sid>",
+      "candidate_path": {
+        "preference": "<preference_value>",
+        "segment_list": "<segment_list_name>"
+      }
+    }
+  }
+}
+Use code with caution.
+Json
+Step 10: Configure Policies to Steer Private Traffic
+Description: Create a route-policy to attach a color extended community attribute to BGP routes received from PE2. Apply this policy in the import direction for the BGP peer relationship with PE2. Next, create a tunnel-policy to select the srv6-te-policy as the tunnel. Finally, apply this tunnel policy under the VPN instance to steer matching private traffic into the SRv6 TE Policy.
+JSON Configuration Example:
+Generated json
+{
+  "route_policy": {
+    "name": "<route_policy_name>",
+    "node": {
+      "id": 10,
+      "action": "permit",
+      "apply": {
+        "extcommunity_color": "<color_community_value>"
+      }
+    }
+  },
+  "bgp_peer_policy_apply": {
+    "as_number": "<backbone_as_number>",
+    "family": "vpnv4",
+    "peer_address": "<pe2_loopback_ipv6>",
+    "direction": "import",
+    "policy_name": "<route_policy_name>"
+  },
+  "tunnel_policy": {
+    "name": "<tunnel_policy_name>",
+    "selection_sequence": "ipv6 srv6-te-policy",
+    "load_balance_number": 1
+  },
+  "vpn_instance_tunnel_apply": {
+    "name": "<vpn_instance_name>",
+    "family": "ipv4",
+    "policy_name": "<tunnel_policy_name>"
+  }
+}

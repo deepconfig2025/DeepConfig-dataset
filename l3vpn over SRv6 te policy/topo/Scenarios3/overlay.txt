@@ -1,0 +1,611 @@
+{
+  "overlay": {
+    "nodes": [
+      { "id": "CE1",  "role": "ce" },
+      { "id": "CE2",  "role": "ce" },
+      { "id": "CE3",  "role": "ce" },
+      { "id": "CE4",  "role": "ce" },
+      { "id": "CE5",  "role": "ce" },
+      { "id": "CE6",  "role": "ce" },
+      { "id": "CE7",  "role": "ce" },
+      { "id": "CE8",  "role": "ce" },
+      { "id": "CE9",  "role": "ce" },
+      { "id": "CE10", "role": "ce" },
+      { "id": "CE11", "role": "ce" },
+      { "id": "CE12", "role": "ce" },
+      { "id": "CE13", "role": "ce" },
+      { "id": "CE14", "role": "ce" },
+      { "id": "CE15", "role": "ce" },
+      { "id": "CE16", "role": "ce" },
+      { "id": "CE17", "role": "ce" },
+      { "id": "CE18", "role": "ce" },
+      { "id": "CE19", "role": "ce" },
+      { "id": "CE20", "role": "ce" },
+      { "id": "CE21", "role": "ce" },
+      { "id": "CE22", "role": "ce" },
+      { "id": "CE23", "role": "ce" },
+      { "id": "CE24", "role": "ce" },
+      { "id": "CE25", "role": "ce" },
+      { "id": "CE26", "role": "ce" },
+      { "id": "CE27", "role": "ce" },
+      { "id": "CE28", "role": "ce" },
+      { "id": "CE29", "role": "ce" },
+      { "id": "CE30", "role": "ce" },
+      { "id": "CE31", "role": "ce" },
+      { "id": "CE32", "role": "ce" },
+      { "id": "CE33", "role": "ce" },
+      { "id": "CE34", "role": "ce" },
+      { "id": "CE35", "role": "ce" },
+
+      { "id": "PE1",  "role": "pe" },
+      { "id": "PE2",  "role": "pe" },
+      { "id": "PE3",  "role": "pe" },
+      { "id": "PE4",  "role": "pe" },
+      { "id": "PE5",  "role": "pe" },
+      { "id": "PE6",  "role": "pe" },
+      { "id": "PE7",  "role": "pe" },
+      { "id": "PE8",  "role": "pe" },
+      { "id": "PE9",  "role": "pe" },
+      { "id": "PE10", "role": "pe" },
+      { "id": "PE11", "role": "pe" },
+      { "id": "PE12", "role": "pe" },
+      { "id": "PE13", "role": "pe" },
+      { "id": "PE14", "role": "pe" },
+      { "id": "PE15", "role": "pe" },
+      { "id": "PE16", "role": "pe" },
+      { "id": "PE17", "role": "pe" },
+      { "id": "PE18", "role": "pe" },
+      { "id": "PE19", "role": "pe" },
+      { "id": "PE20", "role": "pe" },
+      { "id": "PE21", "role": "pe" },
+      { "id": "PE22", "role": "pe" },
+      { "id": "PE23", "role": "pe" },
+      { "id": "PE24", "role": "pe" },
+      { "id": "PE25", "role": "pe" },
+      { "id": "PE26", "role": "pe" },
+      { "id": "PE27", "role": "pe" },
+      { "id": "PE28", "role": "pe" },
+      { "id": "PE29", "role": "pe" },
+      { "id": "PE30", "role": "pe" },
+      { "id": "PE31", "role": "pe" },
+      { "id": "PE32", "role": "pe" },
+      { "id": "PE33", "role": "pe" },
+      { "id": "PE34", "role": "pe" },
+      { "id": "PE35", "role": "pe" }
+    ],
+
+    "access_links": [
+      { "type": "ce-pe", "ce": "CE1",  "pe": "PE1",  "vpn_name": "CustA", "vrf": "CustA", "routing_protocol": "ebgp" },
+      { "type": "ce-pe", "ce": "CE2",  "pe": "PE2",  "vpn_name": "CustA", "vrf": "CustA", "routing_protocol": "ebgp" },
+
+      { "type": "ce-pe", "ce": "CE3",  "pe": "PE3",  "vpn_name": "CustB", "vrf": "CustB", "routing_protocol": "ebgp" },
+      { "type": "ce-pe", "ce": "CE4",  "pe": "PE4",  "vpn_name": "CustB", "vrf": "CustB", "routing_protocol": "ebgp" },
+
+      { "type": "ce-pe", "ce": "CE5",  "pe": "PE5",  "vpn_name": "CustC", "vrf": "CustC", "routing_protocol": "ebgp" },
+      { "type": "ce-pe", "ce": "CE6",  "pe": "PE6",  "vpn_name": "CustC", "vrf": "CustC", "routing_protocol": "ebgp" },
+
+      { "type": "ce-pe", "ce": "CE7",  "pe": "PE7",  "vpn_name": "CustD", "vrf": "CustD", "routing_protocol": "ebgp" },
+      { "type": "ce-pe", "ce": "CE8",  "pe": "PE8",  "vpn_name": "CustD", "vrf": "CustD", "routing_protocol": "ebgp" },
+
+      { "type": "ce-pe", "ce": "CE9",  "pe": "PE9",  "vpn_name": "CustE", "vrf": "CustE", "routing_protocol": "ebgp" },
+      { "type": "ce-pe", "ce": "CE10", "pe": "PE10", "vpn_name": "CustE", "vrf": "CustE", "routing_protocol": "ebgp" },
+
+      { "type": "ce-pe", "ce": "CE11", "pe": "PE11", "vpn_name": "CustF", "vrf": "CustF", "routing_protocol": "ebgp" },
+      { "type": "ce-pe", "ce": "CE12", "pe": "PE12", "vpn_name": "CustF", "vrf": "CustF", "routing_protocol": "ebgp" },
+
+      { "type": "ce-pe", "ce": "CE13", "pe": "PE13", "vpn_name": "CustG", "vrf": "CustG", "routing_protocol": "ebgp" },
+      { "type": "ce-pe", "ce": "CE14", "pe": "PE14", "vpn_name": "CustG", "vrf": "CustG", "routing_protocol": "ebgp" },
+
+      { "type": "ce-pe", "ce": "CE15", "pe": "PE15", "vpn_name": "CustH", "vrf": "CustH", "routing_protocol": "ebgp" },
+      { "type": "ce-pe", "ce": "CE16", "pe": "PE16", "vpn_name": "CustH", "vrf": "CustH", "routing_protocol": "ebgp" },
+
+      { "type": "ce-pe", "ce": "CE17", "pe": "PE17", "vpn_name": "CustI", "vrf": "CustI", "routing_protocol": "ebgp" },
+      { "type": "ce-pe", "ce": "CE18", "pe": "PE18", "vpn_name": "CustI", "vrf": "CustI", "routing_protocol": "ebgp" },
+
+      { "type": "ce-pe", "ce": "CE19", "pe": "PE19", "vpn_name": "CustJ", "vrf": "CustJ", "routing_protocol": "ebgp" },
+      { "type": "ce-pe", "ce": "CE20", "pe": "PE20", "vpn_name": "CustJ", "vrf": "CustJ", "routing_protocol": "ebgp" },
+
+      { "type": "ce-pe", "ce": "CE21", "pe": "PE21", "vpn_name": "CustK", "vrf": "CustK", "routing_protocol": "ebgp" },
+      { "type": "ce-pe", "ce": "CE22", "pe": "PE22", "vpn_name": "CustK", "vrf": "CustK", "routing_protocol": "ebgp" },
+
+      { "type": "ce-pe", "ce": "CE23", "pe": "PE23", "vpn_name": "CustL", "vrf": "CustL", "routing_protocol": "ebgp" },
+      { "type": "ce-pe", "ce": "CE24", "pe": "PE24", "vpn_name": "CustL", "vrf": "CustL", "routing_protocol": "ebgp" },
+
+      { "type": "ce-pe", "ce": "CE25", "pe": "PE25", "vpn_name": "CustM", "vrf": "CustM", "routing_protocol": "ebgp" },
+      { "type": "ce-pe", "ce": "CE26", "pe": "PE26", "vpn_name": "CustM", "vrf": "CustM", "routing_protocol": "ebgp" },
+
+      { "type": "ce-pe", "ce": "CE27", "pe": "PE27", "vpn_name": "CustN", "vrf": "CustN", "routing_protocol": "ebgp" },
+      { "type": "ce-pe", "ce": "CE28", "pe": "PE28", "vpn_name": "CustN", "vrf": "CustN", "routing_protocol": "ebgp" },
+
+      { "type": "ce-pe", "ce": "CE29", "pe": "PE29", "vpn_name": "CustO", "vrf": "CustO", "routing_protocol": "ebgp" },
+      { "type": "ce-pe", "ce": "CE30", "pe": "PE30", "vpn_name": "CustO", "vrf": "CustO", "routing_protocol": "ebgp" },
+
+      { "type": "ce-pe", "ce": "CE31", "pe": "PE31", "vpn_name": "CustP", "vrf": "CustP", "routing_protocol": "ebgp" },
+      { "type": "ce-pe", "ce": "CE32", "pe": "PE32", "vpn_name": "CustP", "vrf": "CustP", "routing_protocol": "ebgp" },
+
+      { "type": "ce-pe", "ce": "CE33", "pe": "PE33", "vpn_name": "CustQ", "vrf": "CustQ", "routing_protocol": "ebgp" },
+      { "type": "ce-pe", "ce": "CE34", "pe": "PE34", "vpn_name": "CustQ", "vrf": "CustQ", "routing_protocol": "ebgp" },
+
+      { "type": "ce-pe", "ce": "CE35", "pe": "PE35", "vpn_name": "CustR", "vrf": "CustR", "routing_protocol": "ebgp" }
+    ],
+
+    "vpn_links": [
+      // CustA: PE1 <-> PE2
+      {
+        "type": "pe-pe-vpn",
+        "vpn_name": "CustA",
+        "vpn_type": "l3vpn",
+        "src_pe": "PE1",
+        "dst_pe": "PE2",
+        "endpoints": [
+          { "pe": "PE1", "vrf": "CustA" },
+          { "pe": "PE2", "vrf": "CustA" }
+        ],
+        "transport": "srv6-te-policy",
+        "tunnel_id": "TE-PE1-PE2"
+      },
+      {
+        "type": "pe-pe-vpn",
+        "vpn_name": "CustA",
+        "vpn_type": "l3vpn",
+        "src_pe": "PE2",
+        "dst_pe": "PE1",
+        "endpoints": [
+          { "pe": "PE1", "vrf": "CustA" },
+          { "pe": "PE2", "vrf": "CustA" }
+        ],
+        "transport": "srv6-te-policy",
+        "tunnel_id": "TE-PE2-PE1"
+      },
+
+      // CustB: PE3 <-> PE4
+      {
+        "type": "pe-pe-vpn",
+        "vpn_name": "CustB",
+        "vpn_type": "l3vpn",
+        "src_pe": "PE3",
+        "dst_pe": "PE4",
+        "endpoints": [
+          { "pe": "PE3", "vrf": "CustB" },
+          { "pe": "PE4", "vrf": "CustB" }
+        ],
+        "transport": "srv6-te-policy",
+        "tunnel_id": "TE-PE3-PE4"
+      },
+      {
+        "type": "pe-pe-vpn",
+        "vpn_name": "CustB",
+        "vpn_type": "l3vpn",
+        "src_pe": "PE4",
+        "dst_pe": "PE3",
+        "endpoints": [
+          { "pe": "PE3", "vrf": "CustB" },
+          { "pe": "PE4", "vrf": "CustB" }
+        ],
+        "transport": "srv6-te-policy",
+        "tunnel_id": "TE-PE4-PE3"
+      },
+
+      // CustC: PE5 <-> PE6
+      {
+        "type": "pe-pe-vpn",
+        "vpn_name": "CustC",
+        "vpn_type": "l3vpn",
+        "src_pe": "PE5",
+        "dst_pe": "PE6",
+        "endpoints": [
+          { "pe": "PE5", "vrf": "CustC" },
+          { "pe": "PE6", "vrf": "CustC" }
+        ],
+        "transport": "srv6-te-policy",
+        "tunnel_id": "TE-PE5-PE6"
+      },
+      {
+        "type": "pe-pe-vpn",
+        "vpn_name": "CustC",
+        "vpn_type": "l3vpn",
+        "src_pe": "PE6",
+        "dst_pe": "PE5",
+        "endpoints": [
+          { "pe": "PE5", "vrf": "CustC" },
+          { "pe": "PE6", "vrf": "CustC" }
+        ],
+        "transport": "srv6-te-policy",
+        "tunnel_id": "TE-PE6-PE5"
+      },
+
+      // CustD: PE7 <-> PE8
+      {
+        "type": "pe-pe-vpn",
+        "vpn_name": "CustD",
+        "vpn_type": "l3vpn",
+        "src_pe": "PE7",
+        "dst_pe": "PE8",
+        "endpoints": [
+          { "pe": "PE7", "vrf": "CustD" },
+          { "pe": "PE8", "vrf": "CustD" }
+        ],
+        "transport": "srv6-te-policy",
+        "tunnel_id": "TE-PE7-PE8"
+      },
+      {
+        "type": "pe-pe-vpn",
+        "vpn_name": "CustD",
+        "vpn_type": "l3vpn",
+        "src_pe": "PE8",
+        "dst_pe": "PE7",
+        "endpoints": [
+          { "pe": "PE7", "vrf": "CustD" },
+          { "pe": "PE8", "vrf": "CustD" }
+        ],
+        "transport": "srv6-te-policy",
+        "tunnel_id": "TE-PE8-PE7"
+      },
+
+      // CustE: PE9 <-> PE10
+      {
+        "type": "pe-pe-vpn",
+        "vpn_name": "CustE",
+        "vpn_type": "l3vpn",
+        "src_pe": "PE9",
+        "dst_pe": "PE10",
+        "endpoints": [
+          { "pe": "PE9",  "vrf": "CustE" },
+          { "pe": "PE10", "vrf": "CustE" }
+        ],
+        "transport": "srv6-te-policy",
+        "tunnel_id": "TE-PE9-PE10"
+      },
+      {
+        "type": "pe-pe-vpn",
+        "vpn_name": "CustE",
+        "vpn_type": "l3vpn",
+        "src_pe": "PE10",
+        "dst_pe": "PE9",
+        "endpoints": [
+          { "pe": "PE9",  "vrf": "CustE" },
+          { "pe": "PE10", "vrf": "CustE" }
+        ],
+        "transport": "srv6-te-policy",
+        "tunnel_id": "TE-PE10-PE9"
+      },
+
+      // CustF: PE11 <-> PE12
+      {
+        "type": "pe-pe-vpn",
+        "vpn_name": "CustF",
+        "vpn_type": "l3vpn",
+        "src_pe": "PE11",
+        "dst_pe": "PE12",
+        "endpoints": [
+          { "pe": "PE11", "vrf": "CustF" },
+          { "pe": "PE12", "vrf": "CustF" }
+        ],
+        "transport": "srv6-te-policy",
+        "tunnel_id": "TE-PE11-PE12"
+      },
+      {
+        "type": "pe-pe-vpn",
+        "vpn_name": "CustF",
+        "vpn_type": "l3vpn",
+        "src_pe": "PE12",
+        "dst_pe": "PE11",
+        "endpoints": [
+          { "pe": "PE11", "vrf": "CustF" },
+          { "pe": "PE12", "vrf": "CustF" }
+        ],
+        "transport": "srv6-te-policy",
+        "tunnel_id": "TE-PE12-PE11"
+      },
+
+      // CustG: PE13 <-> PE14
+      {
+        "type": "pe-pe-vpn",
+        "vpn_name": "CustG",
+        "vpn_type": "l3vpn",
+        "src_pe": "PE13",
+        "dst_pe": "PE14",
+        "endpoints": [
+          { "pe": "PE13", "vrf": "CustG" },
+          { "pe": "PE14", "vrf": "CustG" }
+        ],
+        "transport": "srv6-te-policy",
+        "tunnel_id": "TE-PE13-PE14"
+      },
+      {
+        "type": "pe-pe-vpn",
+        "vpn_name": "CustG",
+        "vpn_type": "l3vpn",
+        "src_pe": "PE14",
+        "dst_pe": "PE13",
+        "endpoints": [
+          { "pe": "PE13", "vrf": "CustG" },
+          { "pe": "PE14", "vrf": "CustG" }
+        ],
+        "transport": "srv6-te-policy",
+        "tunnel_id": "TE-PE14-PE13"
+      },
+
+      // CustH: PE15 <-> PE16
+      {
+        "type": "pe-pe-vpn",
+        "vpn_name": "CustH",
+        "vpn_type": "l3vpn",
+        "src_pe": "PE15",
+        "dst_pe": "PE16",
+        "endpoints": [
+          { "pe": "PE15", "vrf": "CustH" },
+          { "pe": "PE16", "vrf": "CustH" }
+        ],
+        "transport": "srv6-te-policy",
+        "tunnel_id": "TE-PE15-PE16"
+      },
+      {
+        "type": "pe-pe-vpn",
+        "vpn_name": "CustH",
+        "vpn_type": "l3vpn",
+        "src_pe": "PE16",
+        "dst_pe": "PE15",
+        "endpoints": [
+          { "pe": "PE15", "vrf": "CustH" },
+          { "pe": "PE16", "vrf": "CustH" }
+        ],
+        "transport": "srv6-te-policy",
+        "tunnel_id": "TE-PE16-PE15"
+      },
+
+      // CustI: PE17 <-> PE18
+      {
+        "type": "pe-pe-vpn",
+        "vpn_name": "CustI",
+        "vpn_type": "l3vpn",
+        "src_pe": "PE17",
+        "dst_pe": "PE18",
+        "endpoints": [
+          { "pe": "PE17", "vrf": "CustI" },
+          { "pe": "PE18", "vrf": "CustI" }
+        ],
+        "transport": "srv6-te-policy",
+        "tunnel_id": "TE-PE17-PE18"
+      },
+      {
+        "type": "pe-pe-vpn",
+        "vpn_name": "CustI",
+        "vpn_type": "l3vpn",
+        "src_pe": "PE18",
+        "dst_pe": "PE17",
+        "endpoints": [
+          { "pe": "PE17", "vrf": "CustI" },
+          { "pe": "PE18", "vrf": "CustI" }
+        ],
+        "transport": "srv6-te-policy",
+        "tunnel_id": "TE-PE18-PE17"
+      },
+
+      // CustJ: PE19 <-> PE20
+      {
+        "type": "pe-pe-vpn",
+        "vpn_name": "CustJ",
+        "vpn_type": "l3vpn",
+        "src_pe": "PE19",
+        "dst_pe": "PE20",
+        "endpoints": [
+          { "pe": "PE19", "vrf": "CustJ" },
+          { "pe": "PE20", "vrf": "CustJ" }
+        ],
+        "transport": "srv6-te-policy",
+        "tunnel_id": "TE-PE19-PE20"
+      },
+      {
+        "type": "pe-pe-vpn",
+        "vpn_name": "CustJ",
+        "vpn_type": "l3vpn",
+        "src_pe": "PE20",
+        "dst_pe": "PE19",
+        "endpoints": [
+          { "pe": "PE19", "vrf": "CustJ" },
+          { "pe": "PE20", "vrf": "CustJ" }
+        ],
+        "transport": "srv6-te-policy",
+        "tunnel_id": "TE-PE20-PE19"
+      },
+
+      // CustK: PE21 <-> PE22
+      {
+        "type": "pe-pe-vpn",
+        "vpn_name": "CustK",
+        "vpn_type": "l3vpn",
+        "src_pe": "PE21",
+        "dst_pe": "PE22",
+        "endpoints": [
+          { "pe": "PE21", "vrf": "CustK" },
+          { "pe": "PE22", "vrf": "CustK" }
+        ],
+        "transport": "srv6-te-policy",
+        "tunnel_id": "TE-PE21-PE22"
+      },
+      {
+        "type": "pe-pe-vpn",
+        "vpn_name": "CustK",
+        "vpn_type": "l3vpn",
+        "src_pe": "PE22",
+        "dst_pe": "PE21",
+        "endpoints": [
+          { "pe": "PE21", "vrf": "CustK" },
+          { "pe": "PE22", "vrf": "CustK" }
+        ],
+        "transport": "srv6-te-policy",
+        "tunnel_id": "TE-PE22-PE21"
+      },
+
+      // CustL: PE23 <-> PE24
+      {
+        "type": "pe-pe-vpn",
+        "vpn_name": "CustL",
+        "vpn_type": "l3vpn",
+        "src_pe": "PE23",
+        "dst_pe": "PE24",
+        "endpoints": [
+          { "pe": "PE23", "vrf": "CustL" },
+          { "pe": "PE24", "vrf": "CustL" }
+        ],
+        "transport": "srv6-te-policy",
+        "tunnel_id": "TE-PE23-PE24"
+      },
+      {
+        "type": "pe-pe-vpn",
+        "vpn_name": "CustL",
+        "vpn_type": "l3vpn",
+        "src_pe": "PE24",
+        "dst_pe": "PE23",
+        "endpoints": [
+          { "pe": "PE23", "vrf": "CustL" },
+          { "pe": "PE24", "vrf": "CustL" }
+        ],
+        "transport": "srv6-te-policy",
+        "tunnel_id": "TE-PE24-PE23"
+      },
+
+      // CustM: PE25 <-> PE26
+      {
+        "type": "pe-pe-vpn",
+        "vpn_name": "CustM",
+        "vpn_type": "l3vpn",
+        "src_pe": "PE25",
+        "dst_pe": "PE26",
+        "endpoints": [
+          { "pe": "PE25", "vrf": "CustM" },
+          { "pe": "PE26", "vrf": "CustM" }
+        ],
+        "transport": "srv6-te-policy",
+        "tunnel_id": "TE-PE25-PE26"
+      },
+      {
+        "type": "pe-pe-vpn",
+        "vpn_name": "CustM",
+        "vpn_type": "l3vpn",
+        "src_pe": "PE26",
+        "dst_pe": "PE25",
+        "endpoints": [
+          { "pe": "PE25", "vrf": "CustM" },
+          { "pe": "PE26", "vrf": "CustM" }
+        ],
+        "transport": "srv6-te-policy",
+        "tunnel_id": "TE-PE26-PE25"
+      },
+
+      // CustN: PE27 <-> PE28
+      {
+        "type": "pe-pe-vpn",
+        "vpn_name": "CustN",
+        "vpn_type": "l3vpn",
+        "src_pe": "PE27",
+        "dst_pe": "PE28",
+        "endpoints": [
+          { "pe": "PE27", "vrf": "CustN" },
+          { "pe": "PE28", "vrf": "CustN" }
+        ],
+        "transport": "srv6-te-policy",
+        "tunnel_id": "TE-PE27-PE28"
+      },
+      {
+        "type": "pe-pe-vpn",
+        "vpn_name": "CustN",
+        "vpn_type": "l3vpn",
+        "src_pe": "PE28",
+        "dst_pe": "PE27",
+        "endpoints": [
+          { "pe": "PE27", "vrf": "CustN" },
+          { "pe": "PE28", "vrf": "CustN" }
+        ],
+        "transport": "srv6-te-policy",
+        "tunnel_id": "TE-PE28-PE27"
+      },
+
+      // CustO: PE29 <-> PE30
+      {
+        "type": "pe-pe-vpn",
+        "vpn_name": "CustO",
+        "vpn_type": "l3vpn",
+        "src_pe": "PE29",
+        "dst_pe": "PE30",
+        "endpoints": [
+          { "pe": "PE29", "vrf": "CustO" },
+          { "pe": "PE30", "vrf": "CustO" }
+        ],
+        "transport": "srv6-te-policy",
+        "tunnel_id": "TE-PE29-PE30"
+      },
+      {
+        "type": "pe-pe-vpn",
+        "vpn_name": "CustO",
+        "vpn_type": "l3vpn",
+        "src_pe": "PE30",
+        "dst_pe": "PE29",
+        "endpoints": [
+          { "pe": "PE29", "vrf": "CustO" },
+          { "pe": "PE30", "vrf": "CustO" }
+        ],
+        "transport": "srv6-te-policy",
+        "tunnel_id": "TE-PE30-PE29"
+      },
+
+      // CustP: PE31 <-> PE32
+      {
+        "type": "pe-pe-vpn",
+        "vpn_name": "CustP",
+        "vpn_type": "l3vpn",
+        "src_pe": "PE31",
+        "dst_pe": "PE32",
+        "endpoints": [
+          { "pe": "PE31", "vrf": "CustP" },
+          { "pe": "PE32", "vrf": "CustP" }
+        ],
+        "transport": "srv6-te-policy",
+        "tunnel_id": "TE-PE31-PE32"
+      },
+      {
+        "type": "pe-pe-vpn",
+        "vpn_name": "CustP",
+        "vpn_type": "l3vpn",
+        "src_pe": "PE32",
+        "dst_pe": "PE31",
+        "endpoints": [
+          { "pe": "PE31", "vrf": "CustP" },
+          { "pe": "PE32", "vrf": "CustP" }
+        ],
+        "transport": "srv6-te-policy",
+        "tunnel_id": "TE-PE32-PE31"
+      },
+
+      // CustQ: PE33 <-> PE34
+      {
+        "type": "pe-pe-vpn",
+        "vpn_name": "CustQ",
+        "vpn_type": "l3vpn",
+        "src_pe": "PE33",
+        "dst_pe": "PE34",
+        "endpoints": [
+          { "pe": "PE33", "vrf": "CustQ" },
+          { "pe": "PE34", "vrf": "CustQ" }
+        ],
+        "transport": "srv6-te-policy",
+        "tunnel_id": "TE-PE33-PE34"
+      },
+      {
+        "type": "pe-pe-vpn",
+        "vpn_name": "CustQ",
+        "vpn_type": "l3vpn",
+        "src_pe": "PE34",
+        "dst_pe": "PE33",
+        "endpoints": [
+          { "pe": "PE33", "vrf": "CustQ" },
+          { "pe": "PE34", "vrf": "CustQ" }
+        ],
+        "transport": "srv6-te-policy",
+        "tunnel_id": "TE-PE34-PE33"
+      ]
+
+    ]
+  }
+}

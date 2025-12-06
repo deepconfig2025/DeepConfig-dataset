@@ -1,0 +1,429 @@
+devices:
+  - device_name: "PE1"
+    role: "Provider Edge Router"
+    configuration:
+      system:
+        sysname: "PE1"
+      vpn_instance:
+        name: "CustA"
+        route_distinguisher: "65000:1"
+        vpn_target: "65000:101 both"
+        tnl_policy: "p1"
+      srv6:
+        encapsulation_source_address: "2001:DB8:1::1"
+        locator:
+          name: "as1"
+          ipv6_prefix: "2001:DB8:201::/64"
+          static_length: 32
+          opcode: "::001 end psp"
+        te_policy:
+          name: "policy1"
+          endpoint: "2001:DB8:100::2"
+          color: 100
+          binding_sid: "2001:DB8:201::100"
+          candidate_path:
+            preference: 100
+            segment_list: "list1"
+        segment_list:
+          name: "list1"
+          sids:
+            - index: 5
+              sid: "2001:DB8:301::1"
+            - index: 10
+              sid: "2001:DB8:202::1"
+      isis:
+        process_id: 1
+        is_level: "level-1"
+        cost_style: "wide"
+        network_entity: "10.0000.0000.0001.00"
+      interfaces:
+        interface_to_core:
+          ipv6_address: "2001:DB8:10::1/96"
+          isis_ipv6_enable: 1
+        interface_to_ce:
+          ip_binding_vpn_instance: "CustA"
+          ip_address: "10.1.1.1 255.255.255.0"
+        LoopBack1:
+          ipv6_address: "2001:DB8:100::1/128"
+          isis_ipv6_enable: 1
+      bgp:
+        as_number: 65000
+        router_id: "1.1.1.1"
+        peers:
+          - type: "IBGP"
+            address: "2001:DB8:100::2"
+            remote_as: 65000
+            connect_interface: "LoopBack1"
+          - type: "EBGP"
+            vpn_instance: "CustA"
+            address: "10.1.1.2"
+            remote_as: 65101
+      route_policy:
+        name: "p1"
+        apply_extcommunity_color: "0:100"
+      tunnel_policy:
+        name: "p1"
+        tunnel_select_seq: "ipv6 srv6-te-policy"
+
+  - device_name: "CE1"
+    role: "Customer Edge Router"
+    configuration:
+      system:
+        sysname: "CE1"
+      interfaces:
+        GigabitEthernet1_0_0:
+          ip_address: "10.1.1.2 255.255.255.0"
+        LoopBack1:
+          ip_address: "172.16.1.1 255.255.255.255"
+      bgp:
+        as_number: 65101
+        peer:
+          address: "10.1.1.1"
+          remote_as: 65000
+        advertised_network:
+          prefix: "172.16.1.1"
+          mask: "255.255.255.255"
+
+  - device_name: "PE2"
+    role: "Provider Edge Router"
+    configuration:
+      system:
+        sysname: "PE2"
+      vpn_instance:
+        name: "CustA"
+        route_distinguisher: "65000:2"
+        vpn_target: "65000:101 both"
+        tnl_policy: "p1"
+      srv6:
+        encapsulation_source_address: "2001:DB8:2::1"
+        locator:
+          name: "as1"
+          ipv6_prefix: "2001:DB8:202::/64"
+          static_length: 32
+          opcode: "::002 end psp"
+        te_policy:
+          name: "policy1"
+          endpoint: "2001:DB8:100::1"
+          color: 100
+          binding_sid: "2001:DB8:202::100"
+          candidate_path:
+            preference: 100
+            segment_list: "list1"
+        segment_list:
+          name: "list1"
+          sids:
+            - index: 5
+              sid: "2001:DB8:301::1"
+            - index: 10
+              sid: "2001:DB8:201::1"
+      isis:
+        process_id: 1
+        is_level: "level-1"
+        cost_style: "wide"
+        network_entity: "10.0000.0000.0002.00"
+      interfaces:
+        interface_to_core:
+          ipv6_address: "2001:DB8:11::1/96"
+          isis_ipv6_enable: 1
+        interface_to_ce:
+          ip_binding_vpn_instance: "CustA"
+          ip_address: "10.2.1.1 255.255.255.0"
+        LoopBack1:
+          ipv6_address: "2001:DB8:100::2/128"
+          isis_ipv6_enable: 1
+      bgp:
+        as_number: 65000
+        router_id: "2.2.2.2"
+        peers:
+          - type: "IBGP"
+            address: "2001:DB8:100::1"
+            remote_as: 65000
+            connect_interface: "LoopBack1"
+          - type: "EBGP"
+            vpn_instance: "CustA"
+            address: "10.2.1.2"
+            remote_as: 65102
+      route_policy:
+        name: "p1"
+        apply_extcommunity_color: "0:100"
+      tunnel_policy:
+        name: "p1"
+        tunnel_select_seq: "ipv6 srv6-te-policy"
+
+  - device_name: "CE2"
+    role: "Customer Edge Router"
+    configuration:
+      system:
+        sysname: "CE2"
+      interfaces:
+        GigabitEthernet1_0_0:
+          ip_address: "10.2.1.2 255.255.255.0"
+        LoopBack1:
+          ip_address: "172.16.2.1 255.255.255.255"
+      bgp:
+        as_number: 65102
+        peer:
+          address: "10.2.1.1"
+          remote_as: 65000
+        advertised_network:
+          prefix: "172.16.2.1"
+          mask: "255.255.255.255"
+
+  - device_name: "PE3"
+    role: "Provider Edge Router"
+    configuration:
+      system:
+        sysname: "PE3"
+      vpn_instance:
+        name: "CustB"
+        route_distinguisher: "65000:3"
+        vpn_target: "65000:102 both"
+        tnl_policy: "p2"
+      srv6:
+        encapsulation_source_address: "2001:DB8:3::1"
+        locator:
+          name: "as1"
+          ipv6_prefix: "2001:DB8:203::/64"
+          static_length: 32
+          opcode: "::003 end psp"
+        te_policy:
+          name: "policy2"
+          endpoint: "2001:DB8:100::4"
+          color: 101
+          binding_sid: "2001:DB8:203::100"
+          candidate_path:
+            preference: 100
+            segment_list: "list2"
+        segment_list:
+          name: "list2"
+          sids:
+            - index: 5
+              sid: "2001:DB8:302::1"
+            - index: 10
+              sid: "2001:DB8:204::1"
+      isis:
+        process_id: 1
+        is_level: "level-1"
+        cost_style: "wide"
+        network_entity: "10.0000.0000.0003.00"
+      interfaces:
+        interface_to_core:
+          ipv6_address: "2001:DB8:20::1/96"
+          isis_ipv6_enable: 1
+        interface_to_ce:
+          ip_binding_vpn_instance: "CustB"
+          ip_address: "10.3.1.1 255.255.255.0"
+        LoopBack1:
+          ipv6_address: "2001:DB8:100::3/128"
+          isis_ipv6_enable: 1
+      bgp:
+        as_number: 65000
+        router_id: "3.3.3.3"
+        peers:
+          - type: "IBGP"
+            address: "2001:DB8:100::4"
+            remote_as: 65000
+            connect_interface: "LoopBack1"
+          - type: "EBGP"
+            vpn_instance: "CustB"
+            address: "10.3.1.2"
+            remote_as: 65103
+      route_policy:
+        name: "p2"
+        apply_extcommunity_color: "0:101"
+      tunnel_policy:
+        name: "p2"
+        tunnel_select_seq: "ipv6 srv6-te-policy"
+
+  - device_name: "CE3"
+    role: "Customer Edge Router"
+    configuration:
+      system:
+        sysname: "CE3"
+      interfaces:
+        GigabitEthernet1_0_0:
+          ip_address: "10.3.1.2 255.255.255.0"
+        LoopBack1:
+          ip_address: "172.16.3.1 255.255.255.255"
+      bgp:
+        as_number: 65103
+        peer:
+          address: "10.3.1.1"
+          remote_as: 65000
+        advertised_network:
+          prefix: "172.16.3.1"
+          mask: "255.255.255.255"
+
+  - device_name: "PE4"
+    role: "Provider Edge Router"
+    configuration:
+      system:
+        sysname: "PE4"
+      vpn_instance:
+        name: "CustB"
+        route_distinguisher: "65000:4"
+        vpn_target: "65000:102 both"
+        tnl_policy: "p2"
+      srv6:
+        encapsulation_source_address: "2001:DB8:4::1"
+        locator:
+          name: "as1"
+          ipv6_prefix: "2001:DB8:204::/64"
+          static_length: 32
+          opcode: "::004 end psp"
+        te_policy:
+          name: "policy2"
+          endpoint: "2001:DB8:100::3"
+          color: 101
+          binding_sid: "2001:DB8:204::100"
+          candidate_path:
+            preference: 100
+            segment_list: "list2"
+        segment_list:
+          name: "list2"
+          sids:
+            - index: 5
+              sid: "2001:DB8:302::1"
+            - index: 10
+              sid: "2001:DB8:203::1"
+      isis:
+        process_id: 1
+        is_level: "level-1"
+        cost_style: "wide"
+        network_entity: "10.0000.0000.0004.00"
+      interfaces:
+        interface_to_core:
+          ipv6_address: "2001:DB8:21::1/96"
+          isis_ipv6_enable: 1
+        interface_to_ce:
+          ip_binding_vpn_instance: "CustB"
+          ip_address: "10.4.1.1 255.255.255.0"
+        LoopBack1:
+          ipv6_address: "2001:DB8:100::4/128"
+          isis_ipv6_enable: 1
+      bgp:
+        as_number: 65000
+        router_id: "4.4.4.4"
+        peers:
+          - type: "IBGP"
+            address: "2001:DB8:100::3"
+            remote_as: 65000
+            connect_interface: "LoopBack1"
+          - type: "EBGP"
+            vpn_instance: "CustB"
+            address: "10.4.1.2"
+            remote_as: 65104
+      route_policy:
+        name: "p2"
+        apply_extcommunity_color: "0:101"
+      tunnel_policy:
+        name: "p2"
+        tunnel_select_seq: "ipv6 srv6-te-policy"
+
+  - device_name: "CE4"
+    role: "Customer Edge Router"
+    configuration:
+      system:
+        sysname: "CE4"
+      interfaces:
+        GigabitEthernet1_0_0:
+          ip_address: "10.4.1.2 255.255.255.0"
+        LoopBack1:
+          ip_address: "172.16.4.1 255.255.255.255"
+      bgp:
+        as_number: 65104
+        peer:
+          address: "10.4.1.1"
+          remote_as: 65000
+        advertised_network:
+          prefix: "172.16.4.1"
+          mask: "255.255.255.255"
+
+  # ……中间省略：PE5–PE20、CE5–CE20，按相同模式生成
+  # CustC–CustJ，颜色 102–109，P3–P10、地址段和 SID 依次递增 ……
+
+  - device_name: "P1"
+    role: "Provider Router"
+    configuration:
+      system:
+        sysname: "P1"
+      srv6:
+        encapsulation_source_address: "2001:DB8:50::1"
+        locator:
+          name: "as1"
+          ipv6_prefix: "2001:DB8:301::/64"
+          static_length: 32
+          opcode: "::101 end psp"
+      isis:
+        process_id: 1
+        is_level: "level-1"
+        cost_style: "wide"
+        network_entity: "10.0000.0001.0001.00"
+      interfaces:
+        GigabitEthernet1_0_0:
+          ipv6_address: "2001:DB8:10::2/96"
+          isis_ipv6_enable: 1
+        GigabitEthernet2_0_0:
+          ipv6_address: "2001:DB8:11::2/96"
+          isis_ipv6_enable: 1
+        LoopBack1:
+          ipv6_address: "2001:DB8:50::1/128"
+          isis_ipv6_enable: 1
+
+  - device_name: "P2"
+    role: "Provider Router"
+    configuration:
+      system:
+        sysname: "P2"
+      srv6:
+        encapsulation_source_address: "2001:DB8:50::2"
+        locator:
+          name: "as1"
+          ipv6_prefix: "2001:DB8:302::/64"
+          static_length: 32
+          opcode: "::102 end psp"
+      isis:
+        process_id: 1
+        is_level: "level-1"
+        cost_style: "wide"
+        network_entity: "10.0000.0001.0002.00"
+      interfaces:
+        GigabitEthernet1_0_0:
+          ipv6_address: "2001:DB8:20::2/96"
+          isis_ipv6_enable: 1
+        GigabitEthernet2_0_0:
+          ipv6_address: "2001:DB8:21::2/96"
+          isis_ipv6_enable: 1
+        LoopBack1:
+          ipv6_address: "2001:DB8:50::2/128"
+          isis_ipv6_enable: 1
+
+  # ……P3–P9 结构同上，每个 Pk 对应一对 PE(2k-1)/PE(2k) ……
+
+  - device_name: "P10"
+    role: "Provider Router"
+    configuration:
+      system:
+        sysname: "P10"
+      srv6:
+        encapsulation_source_address: "2001:DB8:50::10"
+        locator:
+          name: "as1"
+          ipv6_prefix: "2001:DB8:310::/64"
+          static_length: 32
+          opcode: "::110 end psp"
+      isis:
+        process_id: 1
+        is_level: "level-1"
+        cost_style: "wide"
+        network_entity: "10.0000.0001.0010.00"
+      interfaces:
+        GigabitEthernet1_0_0:
+          ipv6_address: "2001:DB8:100::2/96"
+          isis_ipv6_enable: 1
+        GigabitEthernet2_0_0:
+          ipv6_address: "2001:DB8:101::2/96"
+          isis_ipv6_enable: 1
+        LoopBack1:
+          ipv6_address: "2001:DB8:50::10/128"
+          isis_ipv6_enable: 1

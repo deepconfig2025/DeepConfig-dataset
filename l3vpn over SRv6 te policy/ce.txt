@@ -1,0 +1,33 @@
+Step 1: Configure Interfaces
+
+Configure the IP addresses on the CE device's interfaces. This includes the interface connecting to the PE router and the loopback interface representing a local service network .
+
+
+JSON
+
+{
+  "interface_LoopBack1": {
+    "ip_address": "<loopback_ip_address>/<subnet_mask>"
+  },
+  "interface_GigabitEthernet1/0/0": {
+    "ip_address": "<ce_interface_ip_address> <subnet_mask>"
+  }
+}
+Step 2: Configure BGP
+
+Configure the BGP protocol to establish an EBGP peering with the provider's PE router. Then, use BGP to advertise the local private network prefix (e.g., the Loopback1 address) to the PE, which will then propagate it throughout the VPN .
+
+JSON
+
+{
+  "bgp": {
+    "as_number": "<ce_as_number>",
+    "peer": {
+      "address": "<pe_peer_address>",
+      "remote_as": "<pe_as_number>"
+    },
+    "ipv4_family_unicast": {
+      "network": "<network_to_advertise> <mask_length>"
+    }
+  }
+}

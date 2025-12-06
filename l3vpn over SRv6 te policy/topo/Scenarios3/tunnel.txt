@@ -1,0 +1,465 @@
+{
+  "tunnel": {
+    "pe_pairs": [
+      {
+        "src_pe": "PE1",
+        "dst_pe": "PE2",
+        "transport": {
+          "type": "srv6",
+          "mode": "te",
+          "policy_name": "TE-PE1-PE2",
+          "segment_list": [
+            { "node": "P1",  "sid": "${P1_SID}" },
+            { "node": "PE2", "sid": "${PE2_SID}" }
+          ]
+        }
+      },
+      {
+        "src_pe": "PE2",
+        "dst_pe": "PE1",
+        "transport": {
+          "type": "srv6",
+          "mode": "te",
+          "policy_name": "TE-PE2-PE1",
+          "segment_list": [
+            { "node": "P1",  "sid": "${P1_SID}" },
+            { "node": "PE1", "sid": "${PE1_SID}" }
+          ]
+        }
+      },
+
+      {
+        "src_pe": "PE3",
+        "dst_pe": "PE4",
+        "transport": {
+          "type": "srv6",
+          "mode": "te",
+          "policy_name": "TE-PE3-PE4",
+          "segment_list": [
+            { "node": "P2",  "sid": "${P2_SID}" },
+            { "node": "PE4", "sid": "${PE4_SID}" }
+          ]
+        }
+      },
+      {
+        "src_pe": "PE4",
+        "dst_pe": "PE3",
+        "transport": {
+          "type": "srv6",
+          "mode": "te",
+          "policy_name": "TE-PE4-PE3",
+          "segment_list": [
+            { "node": "P2",  "sid": "${P2_SID}" },
+            { "node": "PE3", "sid": "${PE3_SID}" }
+          ]
+        }
+      },
+
+      {
+        "src_pe": "PE5",
+        "dst_pe": "PE6",
+        "transport": {
+          "type": "srv6",
+          "mode": "te",
+          "policy_name": "TE-PE5-PE6",
+          "segment_list": [
+            { "node": "P3",  "sid": "${P3_SID}" },
+            { "node": "PE6", "sid": "${PE6_SID}" }
+          ]
+        }
+      },
+      {
+        "src_pe": "PE6",
+        "dst_pe": "PE5",
+        "transport": {
+          "type": "srv6",
+          "mode": "te",
+          "policy_name": "TE-PE6-PE5",
+          "segment_list": [
+            { "node": "P3",  "sid": "${P3_SID}" },
+            { "node": "PE5", "sid": "${PE5_SID}" }
+          ]
+        }
+      },
+
+      {
+        "src_pe": "PE7",
+        "dst_pe": "PE8",
+        "transport": {
+          "type": "srv6",
+          "mode": "te",
+          "policy_name": "TE-PE7-PE8",
+          "segment_list": [
+            { "node": "P4",  "sid": "${P4_SID}" },
+            { "node": "PE8", "sid": "${PE8_SID}" }
+          ]
+        }
+      },
+      {
+        "src_pe": "PE8",
+        "dst_pe": "PE7",
+        "transport": {
+          "type": "srv6",
+          "mode": "te",
+          "policy_name": "TE-PE8-PE7",
+          "segment_list": [
+            { "node": "P4",  "sid": "${P4_SID}" },
+            { "node": "PE7", "sid": "${PE7_SID}" }
+          ]
+        }
+      },
+
+      {
+        "src_pe": "PE9",
+        "dst_pe": "PE10",
+        "transport": {
+          "type": "srv6",
+          "mode": "te",
+          "policy_name": "TE-PE9-PE10",
+          "segment_list": [
+            { "node": "P5",   "sid": "${P5_SID}" },
+            { "node": "PE10", "sid": "${PE10_SID}" }
+          ]
+        }
+      },
+      {
+        "src_pe": "PE10",
+        "dst_pe": "PE9",
+        "transport": {
+          "type": "srv6",
+          "mode": "te",
+          "policy_name": "TE-PE10-PE9",
+          "segment_list": [
+            { "node": "P5",  "sid": "${P5_SID}" },
+            { "node": "PE9", "sid": "${PE9_SID}" }
+          ]
+        }
+      },
+
+      {
+        "src_pe": "PE11",
+        "dst_pe": "PE12",
+        "transport": {
+          "type": "srv6",
+          "mode": "te",
+          "policy_name": "TE-PE11-PE12",
+          "segment_list": [
+            { "node": "P6",   "sid": "${P6_SID}" },
+            { "node": "PE12", "sid": "${PE12_SID}" }
+          ]
+        }
+      },
+      {
+        "src_pe": "PE12",
+        "dst_pe": "PE11",
+        "transport": {
+          "type": "srv6",
+          "mode": "te",
+          "policy_name": "TE-PE12-PE11",
+          "segment_list": [
+            { "node": "P6",   "sid": "${P6_SID}" },
+            { "node": "PE11", "sid": "${PE11_SID}" }
+          ]
+        }
+      },
+
+      {
+        "src_pe": "PE13",
+        "dst_pe": "PE14",
+        "transport": {
+          "type": "srv6",
+          "mode": "te",
+          "policy_name": "TE-PE13-PE14",
+          "segment_list": [
+            { "node": "P7",   "sid": "${P7_SID}" },
+            { "node": "PE14", "sid": "${PE14_SID}" }
+          ]
+        }
+      },
+      {
+        "src_pe": "PE14",
+        "dst_pe": "PE13",
+        "transport": {
+          "type": "srv6",
+          "mode": "te",
+          "policy_name": "TE-PE14-PE13",
+          "segment_list": [
+            { "node": "P7",   "sid": "${P7_SID}" },
+            { "node": "PE13", "sid": "${PE13_SID}" }
+          ]
+        }
+      },
+
+      {
+        "src_pe": "PE15",
+        "dst_pe": "PE16",
+        "transport": {
+          "type": "srv6",
+          "mode": "te",
+          "policy_name": "TE-PE15-PE16",
+          "segment_list": [
+            { "node": "P8",   "sid": "${P8_SID}" },
+            { "node": "PE16", "sid": "${PE16_SID}" }
+          ]
+        }
+      },
+      {
+        "src_pe": "PE16",
+        "dst_pe": "PE15",
+        "transport": {
+          "type": "srv6",
+          "mode": "te",
+          "policy_name": "TE-PE16-PE15",
+          "segment_list": [
+            { "node": "P8",   "sid": "${P8_SID}" },
+            { "node": "PE15", "sid": "${PE15_SID}" }
+          ]
+        }
+      },
+
+      {
+        "src_pe": "PE17",
+        "dst_pe": "PE18",
+        "transport": {
+          "type": "srv6",
+          "mode": "te",
+          "policy_name": "TE-PE17-PE18",
+          "segment_list": [
+            { "node": "P9",   "sid": "${P9_SID}" },
+            { "node": "PE18", "sid": "${PE18_SID}" }
+          ]
+        }
+      },
+      {
+        "src_pe": "PE18",
+        "dst_pe": "PE17",
+        "transport": {
+          "type": "srv6",
+          "mode": "te",
+          "policy_name": "TE-PE18-PE17",
+          "segment_list": [
+            { "node": "P9",   "sid": "${P9_SID}" },
+            { "node": "PE17", "sid": "${PE17_SID}" }
+          ]
+        }
+      },
+
+      {
+        "src_pe": "PE19",
+        "dst_pe": "PE20",
+        "transport": {
+          "type": "srv6",
+          "mode": "te",
+          "policy_name": "TE-PE19-PE20",
+          "segment_list": [
+            { "node": "P10",  "sid": "${P10_SID}" },
+            { "node": "PE20", "sid": "${PE20_SID}" }
+          ]
+        }
+      },
+      {
+        "src_pe": "PE20",
+        "dst_pe": "PE19",
+        "transport": {
+          "type": "srv6",
+          "mode": "te",
+          "policy_name": "TE-PE20-PE19",
+          "segment_list": [
+            { "node": "P10",  "sid": "${P10_SID}" },
+            { "node": "PE19", "sid": "${PE19_SID}" }
+          ]
+        }
+      },
+
+      {
+        "src_pe": "PE21",
+        "dst_pe": "PE22",
+        "transport": {
+          "type": "srv6",
+          "mode": "te",
+          "policy_name": "TE-PE21-PE22",
+          "segment_list": [
+            { "node": "P11",  "sid": "${P11_SID}" },
+            { "node": "PE22", "sid": "${PE22_SID}" }
+          ]
+        }
+      },
+      {
+        "src_pe": "PE22",
+        "dst_pe": "PE21",
+        "transport": {
+          "type": "srv6",
+          "mode": "te",
+          "policy_name": "TE-PE22-PE21",
+          "segment_list": [
+            { "node": "P11",  "sid": "${P11_SID}" },
+            { "node": "PE21", "sid": "${PE21_SID}" }
+          ]
+        }
+      },
+
+      {
+        "src_pe": "PE23",
+        "dst_pe": "PE24",
+        "transport": {
+          "type": "srv6",
+          "mode": "te",
+          "policy_name": "TE-PE23-PE24",
+          "segment_list": [
+            { "node": "P12",  "sid": "${P12_SID}" },
+            { "node": "PE24", "sid": "${PE24_SID}" }
+          ]
+        }
+      },
+      {
+        "src_pe": "PE24",
+        "dst_pe": "PE23",
+        "transport": {
+          "type": "srv6",
+          "mode": "te",
+          "policy_name": "TE-PE24-PE23",
+          "segment_list": [
+            { "node": "P12",  "sid": "${P12_SID}" },
+            { "node": "PE23", "sid": "${PE23_SID}" }
+          ]
+        }
+      },
+
+      {
+        "src_pe": "PE25",
+        "dst_pe": "PE26",
+        "transport": {
+          "type": "srv6",
+          "mode": "te",
+          "policy_name": "TE-PE25-PE26",
+          "segment_list": [
+            { "node": "P13",  "sid": "${P13_SID}" },
+            { "node": "PE26", "sid": "${PE26_SID}" }
+          ]
+        }
+      },
+      {
+        "src_pe": "PE26",
+        "dst_pe": "PE25",
+        "transport": {
+          "type": "srv6",
+          "mode": "te",
+          "policy_name": "TE-PE26-PE25",
+          "segment_list": [
+            { "node": "P13",  "sid": "${P13_SID}" },
+            { "node": "PE25", "sid": "${PE25_SID}" }
+          ]
+        }
+      },
+
+      {
+        "src_pe": "PE27",
+        "dst_pe": "PE28",
+        "transport": {
+          "type": "srv6",
+          "mode": "te",
+          "policy_name": "TE-PE27-PE28",
+          "segment_list": [
+            { "node": "P14",  "sid": "${P14_SID}" },
+            { "node": "PE28", "sid": "${PE28_SID}" }
+          ]
+        }
+      },
+      {
+        "src_pe": "PE28",
+        "dst_pe": "PE27",
+        "transport": {
+          "type": "srv6",
+          "mode": "te",
+          "policy_name": "TE-PE28-PE27",
+          "segment_list": [
+            { "node": "P14",  "sid": "${P14_SID}" },
+            { "node": "PE27", "sid": "${PE27_SID}" }
+          ]
+        }
+      },
+
+      {
+        "src_pe": "PE29",
+        "dst_pe": "PE30",
+        "transport": {
+          "type": "srv6",
+          "mode": "te",
+          "policy_name": "TE-PE29-PE30",
+          "segment_list": [
+            { "node": "P15",  "sid": "${P15_SID}" },
+            { "node": "PE30", "sid": "${PE30_SID}" }
+          ]
+        }
+      },
+      {
+        "src_pe": "PE30",
+        "dst_pe": "PE29",
+        "transport": {
+          "type": "srv6",
+          "mode": "te",
+          "policy_name": "TE-PE30-PE29",
+          "segment_list": [
+            { "node": "P15",  "sid": "${P15_SID}" },
+            { "node": "PE29", "sid": "${PE29_SID}" }
+          ]
+        }
+      },
+
+      {
+        "src_pe": "PE31",
+        "dst_pe": "PE32",
+        "transport": {
+          "type": "srv6",
+          "mode": "te",
+          "policy_name": "TE-PE31-PE32",
+          "segment_list": [
+            { "node": "P1",   "sid": "${P1_SID}" },
+            { "node": "PE32", "sid": "${PE32_SID}" }
+          ]
+        }
+      },
+      {
+        "src_pe": "PE32",
+        "dst_pe": "PE31",
+        "transport": {
+          "type": "srv6",
+          "mode": "te",
+          "policy_name": "TE-PE32-PE31",
+          "segment_list": [
+            { "node": "P1",   "sid": "${P1_SID}" },
+            { "node": "PE31", "sid": "${PE31_SID}" }
+          ]
+        }
+      },
+
+      {
+        "src_pe": "PE33",
+        "dst_pe": "PE34",
+        "transport": {
+          "type": "srv6",
+          "mode": "te",
+          "policy_name": "TE-PE33-PE34",
+          "segment_list": [
+            { "node": "P2",   "sid": "${P2_SID}" },
+            { "node": "PE34", "sid": "${PE34_SID}" }
+          ]
+        }
+      },
+      {
+        "src_pe": "PE34",
+        "dst_pe": "PE33",
+        "transport": {
+          "type": "srv6",
+          "mode": "te",
+          "policy_name": "TE-PE34-PE33",
+          "segment_list": [
+            { "node": "P2",   "sid": "${P2_SID}" },
+            { "node": "PE33", "sid": "${PE33_SID}" }
+          ]
+        }
+      }
+
+    ]
+  }
+}

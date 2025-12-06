@@ -1,0 +1,86 @@
+{
+  "tunnel": {
+    "pe_pairs": [
+      {
+        "src_pe": "PE1",
+        "dst_pe": "PE2",
+        "transport": {
+          "type": "srv6",
+          "mode": "te",
+          "policy_name": "TE-PE1-PE2",
+          "segment_list": [
+            { "node": "P1",  "sid": "${P1_SID}" },
+            { "node": "PE2", "sid": "${PE2_SID}" }
+          ]
+        }
+      },
+      {
+        "src_pe": "PE2",
+        "dst_pe": "PE1",
+        "transport": {
+          "type": "srv6",
+          "mode": "te",
+          "policy_name": "TE-PE2-PE1",
+          "segment_list": [
+            { "node": "P1",  "sid": "${P1_SID}" },
+            { "node": "PE1", "sid": "${PE1_SID}" }
+          ]
+        }
+      },
+
+      {
+        "src_pe": "PE3",
+        "dst_pe": "PE4",
+        "transport": {
+          "type": "srv6",
+          "mode": "te",
+          "policy_name": "TE-PE3-PE4",
+          "segment_list": [
+            { "node": "P2",  "sid": "${P2_SID}" },
+            { "node": "PE4", "sid": "${PE4_SID}" }
+          ]
+        }
+      },
+      {
+        "src_pe": "PE4",
+        "dst_pe": "PE3",
+        "transport": {
+          "type": "srv6",
+          "mode": "te",
+          "policy_name": "TE-PE4-PE3",
+          "segment_list": [
+            { "node": "P2",  "sid": "${P2_SID}" },
+            { "node": "PE3", "sid": "${PE3_SID}" }
+          ]
+        }
+      },
+
+      {
+        "src_pe": "PE5",
+        "dst_pe": "PE6",
+        "transport": {
+          "type": "srv6",
+          "mode": "te",
+          "policy_name": "TE-PE5-PE6",
+          "segment_list": [
+            { "node": "P3",  "sid": "${P3_SID}" },
+            { "node": "PE6", "sid": "${PE6_SID}" }
+          ]
+        }
+      },
+      {
+        "src_pe": "PE6",
+        "dst_pe": "PE5",
+        "transport": {
+          "type": "srv6",
+          "mode": "te",
+          "policy_name": "TE-PE6-PE5",
+          "segment_list": [
+            { "node": "P4",  "sid": "${P4_SID}" },
+            { "node": "PE5", "sid": "${PE5_SID}" }
+          ]
+        }
+      }
+    ]
+  }
+}

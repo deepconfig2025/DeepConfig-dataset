@@ -1,0 +1,63 @@
+{
+  "underlay": {
+    "nodes": [
+      { "id": "P1",  "role": "p"  },
+      { "id": "P2",  "role": "p"  },
+      { "id": "P3",  "role": "p"  },
+      { "id": "P4",  "role": "p"  },
+
+      { "id": "PE1", "role": "pe" },
+      { "id": "PE2", "role": "pe" },
+      { "id": "PE3", "role": "pe" },
+      { "id": "PE4", "role": "pe" },
+      { "id": "PE5", "role": "pe" },
+      { "id": "PE6", "role": "pe" },
+
+      { "id": "CE1", "role": "ce" },
+      { "id": "CE2", "role": "ce" },
+      { "id": "CE3", "role": "ce" },
+      { "id": "CE4", "role": "ce" },
+      { "id": "CE5", "role": "ce" },
+      { "id": "CE6", "role": "ce" }
+    ],
+
+    "links": [
+      { "endpoints": [ { "node": "PE1", "if": "Gi0/0/0" }, { "node": "P1", "if": "Gi0/0/0" } ], "metric": 10 },
+      { "endpoints": [ { "node": "PE1", "if": "Gi0/0/1" }, { "node": "P2", "if": "Gi0/0/0" } ], "metric": 10 },
+      { "endpoints": [ { "node": "PE1", "if": "Gi0/0/2" }, { "node": "P3", "if": "Gi0/0/0" } ], "metric": 10 },
+      { "endpoints": [ { "node": "PE1", "if": "Gi0/0/3" }, { "node": "P4", "if": "Gi0/0/0" } ], "metric": 10 },
+
+      { "endpoints": [ { "node": "PE2", "if": "Gi0/0/0" }, { "node": "P1", "if": "Gi0/0/1" } ], "metric": 10 },
+      { "endpoints": [ { "node": "PE2", "if": "Gi0/0/1" }, { "node": "P2", "if": "Gi0/0/1" } ], "metric": 10 },
+      { "endpoints": [ { "node": "PE2", "if": "Gi0/0/2" }, { "node": "P3", "if": "Gi0/0/1" } ], "metric": 10 },
+      { "endpoints": [ { "node": "PE2", "if": "Gi0/0/3" }, { "node": "P4", "if": "Gi0/0/1" } ], "metric": 10 },
+
+      { "endpoints": [ { "node": "PE3", "if": "Gi0/0/0" }, { "node": "P1", "if": "Gi0/0/2" } ], "metric": 10 },
+      { "endpoints": [ { "node": "PE3", "if": "Gi0/0/1" }, { "node": "P2", "if": "Gi0/0/2" } ], "metric": 10 },
+      { "endpoints": [ { "node": "PE3", "if": "Gi0/0/2" }, { "node": "P3", "if": "Gi0/0/2" } ], "metric": 10 },
+      { "endpoints": [ { "node": "PE3", "if": "Gi0/0/3" }, { "node": "P4", "if": "Gi0/0/2" } ], "metric": 10 },
+
+      { "endpoints": [ { "node": "PE4", "if": "Gi0/0/0" }, { "node": "P1", "if": "Gi0/0/3" } ], "metric": 10 },
+      { "endpoints": [ { "node": "PE4", "if": "Gi0/0/1" }, { "node": "P2", "if": "Gi0/0/3" } ], "metric": 10 },
+      { "endpoints": [ { "node": "PE4", "if": "Gi0/0/2" }, { "node": "P3", "if": "Gi0/0/3" } ], "metric": 10 },
+      { "endpoints": [ { "node": "PE4", "if": "Gi0/0/3" }, { "node": "P4", "if": "Gi0/0/3" } ], "metric": 10 },
+
+      { "endpoints": [ { "node": "PE5", "if": "Gi0/0/0" }, { "node": "P1", "if": "Gi0/0/4" } ], "metric": 10 },
+      { "endpoints": [ { "node": "PE5", "if": "Gi0/0/1" }, { "node": "P2", "if": "Gi0/0/4" } ], "metric": 10 },
+      { "endpoints": [ { "node": "PE5", "if": "Gi0/0/2" }, { "node": "P3", "if": "Gi0/0/4" } ], "metric": 10 },
+      { "endpoints": [ { "node": "PE5", "if": "Gi0/0/3" }, { "node": "P4", "if": "Gi0/0/4" } ], "metric": 10 },
+
+      { "endpoints": [ { "node": "PE6", "if": "Gi0/0/0" }, { "node": "P1", "if": "Gi0/0/5" } ], "metric": 10 },
+      { "endpoints": [ { "node": "PE6", "if": "Gi0/0/1" }, { "node": "P2", "if": "Gi0/0/5" } ], "metric": 10 },
+      { "endpoints": [ { "node": "PE6", "if": "Gi0/0/2" }, { "node": "P3", "if": "Gi0/0/5" } ], "metric": 10 },
+      { "endpoints": [ { "node": "PE6", "if": "Gi0/0/3" }, { "node": "P4", "if": "Gi0/0/5" } ], "metric": 10 },
+
+      { "endpoints": [ { "node": "CE1", "if": "Gi0/0/0" }, { "node": "PE1", "if": "Gi0/1/0" } ] },
+      { "endpoints": [ { "node": "CE2", "if": "Gi0/0/0" }, { "node": "PE2", "if": "Gi0/1/0" } ] },
+      { "endpoints": [ { "node": "CE3", "if": "Gi0/0/0" }, { "node": "PE3", "if": "Gi0/1/0" } ] },
+      { "endpoints": [ { "node": "CE4", "if": "Gi0/0/0" }, { "node": "PE4", "if": "Gi0/1/0" } ] },
+      { "endpoints": [ { "node": "CE5", "if": "Gi0/0/0" }, { "node": "PE5", "if": "Gi0/1/0" } ] },
+      { "endpoints": [ { "node": "CE6", "if": "Gi0/0/0" }, { "node": "PE6", "if": "Gi0/1/0" } ] }
+    ]
+  }
+}

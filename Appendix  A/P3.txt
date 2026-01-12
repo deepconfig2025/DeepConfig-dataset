@@ -1,0 +1,72 @@
+{
+  "hostname": "P3",
+  "interfaces": {
+    "GigabitEthernet1/0/0": {
+      "description": "Link to PE1",
+      "ipv6_enabled": true,
+      "ipv6_address": "2001:db8:13::2/64"
+    },
+    "GigabitEthernet2/0/0": {
+      "description": "Link to P4",
+      "ipv6_enabled": true,
+      "ipv6_address": "2001:db8:34:1::1/64"
+    },
+    "GigabitEthernet3/0/0": {
+      "description": "Link to P1",
+      "ipv6_enabled": true,
+      "ipv6_address": "2001:db8:13:2::2/64"
+    },
+    "LoopBack1": {
+      "ipv6_enabled": true,
+      "ipv6_address": "2001:db8::103/128"
+    }
+  },
+  "isis": {
+    "process_id": 1,
+    "level": "level-1",
+    "cost_style": "wide",
+    "network_entity": "49.0001.0000.0000.0103.00",
+    "ipv6_topology_enabled": true
+  },
+  "isis_interface_config": [
+    {
+      "interface_name": "GigabitEthernet1/0/0",
+      "isis_ipv6_enable": 1
+    },
+    {
+      "interface_name": "GigabitEthernet2/0/0",
+      "isis_ipv6_enable": 1
+    },
+    {
+      "interface_name": "GigabitEthernet3/0/0",
+      "isis_ipv6_enable": 1
+    },
+    {
+      "interface_name": "LoopBack1",
+      "isis_ipv6_enable": 1
+    }
+  ],
+  "segment_routing_ipv6": {
+    "encapsulation_source_address": "2001:db8::103",
+    "locators": [
+      {
+        "name": "LOC_P3",
+        "ipv6_prefix": "2001:db8:6000::/48",
+        "static_length": 64,
+        "opcodes": [
+          {
+            "sid_function": "::222",
+            "behavior": "end.psp"
+          }
+        ]
+      }
+    ]
+  },
+  "isis_srv6_config": {
+    "process_id": 1,
+    "segment_routing_ipv6": {
+      "locator": "LOC_P3",
+      "auto_sid_disable": true
+    }
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "overlay": {
+    "nodes": [
+      { "id": "CE1", "role": "ce" },
+      { "id": "CE2", "role": "ce" },
+      { "id": "CE3", "role": "ce" },
+      { "id": "PE1", "role": "pe" },
+      { "id": "PE2", "role": "pe" },
+      { "id": "PE3", "role": "pe" }
+    ],
+    "access_links": [
+      { "ce": "CE1", "pe": "PE1", "vpn_name": "CustA", "vrf": "VRF_A", "protocol": "ebgp"， export_rt:"RTA", import_rt:"RTB, RTC" },
+      { "ce": "CE2", "pe": "PE2", "vpn_name": "CustA", "vrf": "VRF_B", "protocol": "ebgp" , export_rt:"RTB", import_rt:"RTA"},
+      { "ce": "CE3", "pe": "PE3", "vpn_name": "CustB", "vrf": "VRF_C", "protocol": "ebgp" , export_rt:"RTC", import_RT:"RTA"}
+    ],
+    "vpn_links": [
+
+      {
+        "vpn_name": "CustA", "src_pe": "PE1", "dst_pe": "PE2", "tunnel_id": "te-pe1-pe2"
+      },
+      {
+        "vpn_name": "CustA", "src_pe": "PE2", "dst_pe": "PE1", "tunnel_id": "te-pe2-pe1"
+      },
+
+      {
+        "vpn_name": "CustB", "src_pe": "PE1", "dst_pe": "PE3", "tunnel_id": "te-pe1-pe3"
+      },
+      {
+        "vpn_name": "CustB", "src_pe": "PE3", "dst_pe": "PE1", "tunnel_id": "te-pe3-pe1"
+      }
+    ]
+  }
+}
+
+{
+  "tunnel": [
+    { "name": "te-pe1-pe2", "list": ["P1", "P2", "PE2"] },
+    { "name": "te-pe2-pe1", "list": ["P2", "P1", "PE1"] },
+    { "name": "te-pe1-pe3", "list": ["P3", "P4", "PE3"] },
+    { "name": "te-pe3-pe1", "list": ["P4", "P3", "PE1"] }
+  ]
+}
+
+
+{
+  "underlay": {
+    "nodes": [
+      { "id": "PE1", "role": "pe" }, { "id": "PE2", "role": "pe" }, { "id": "PE3", "role": "pe" },
+      { "id": "P1", "role": "p" }, { "id": "P2", "role": "p" }, 
+      { "id": "P3", "role": "p" }, { "id": "P4", "role": "p" },
+      { "id": "CE1", "role": "ce" }, { "id": "CE2", "role": "ce" }, { "id": "CE3", "role": "ce" }
+    ],
+    "links": [
+      { "endpoints": [{"node": "CE1", "if": "G1"}, {"node": "PE1", "if": "G1"}] },
+      { "endpoints": [{"node": "CE2", "if": "G1"}, {"node": "PE2", "if": "G1"}] },
+      { "endpoints": [{"node": "CE3", "if": "G1"}, {"node": "PE3", "if": "G1"}] },
+      
+      { "endpoints": [{"node": "PE1", "if": "G2"}, {"node": "P1",  "if": "G1"}], "metric": 10 },
+      { "endpoints": [{"node": "PE1", "if": "G3"}, {"node": "P3",  "if": "G1"}], "metric": 10 },
+      { "endpoints": [{"node": "P1",  "if": "G2"}, {"node": "P2",  "if": "G1"}], "metric": 10 },
+      { "endpoints": [{"node": "P1",  "if": "G3"}, {"node": "P3",  "if": "G2"}], "metric": 10 },
+      { "endpoints": [{"node": "P3",  "if": "G3"}, {"node": "P4",  "if": "G1"}], "metric": 10 },
+      { "endpoints": [{"node": "P2",  "if": "G2"}, {"node": "P4",  "if": "G2"}], "metric": 10 },
+      { "endpoints": [{"node": "P2",  "if": "G3"}, {"node": "PE2", "if": "G1"}], "metric": 10 },
+      { "endpoints": [{"node": "P2",  "if": "G4"}, {"node": "PE3", "if": "G1"}], "metric": 10 },
+      { "endpoints": [{"node": "P4",  "if": "G3"}, {"node": "PE2", "if": "G2"}], "metric": 10 },
+      { "endpoints": [{"node": "P4",  "if": "G4"}, {"node": "PE3", "if": "G2"}], "metric": 10 }
+    ]
+  }
+}

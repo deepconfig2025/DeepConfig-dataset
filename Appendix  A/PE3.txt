@@ -1,0 +1,202 @@
+{
+  "hostname": "PE3",
+  "interfaces": {
+    "GigabitEthernet1/0/0": {
+      "description": "Link to P2",
+      "ipv6_enabled": true,
+      "ipv6_address": "2001:db8:23::3/64"
+    },
+    "GigabitEthernet2/0/0": {
+      "description": "Link to P4",
+      "ipv6_enabled": true,
+      "ipv6_address": "2001:db8:34::3/64"
+    },
+    "GigabitEthernet1/0/1": {
+      "description": "Link to CE3 for CustB",
+      "ipv4_address": "10.2.3.1/24"
+    },
+    "LoopBack1": {
+      "ipv6_enabled": true,
+      "ipv6_address": "2001:db8::3/128"
+    }
+  },
+  "isis": {
+    "process_id": 1,
+    "level": "level-1",
+    "cost_style": "wide",
+    "network_entity": "49.0001.0000.0000.0003.00",
+    "ipv6_topology_enabled": true
+  },
+  "isis_interface_config": [
+    {
+      "interface_name": "GigabitEthernet1/0/0",
+      "isis_ipv6_enable": 1
+    },
+    {
+      "interface_name": "GigabitEthernet2/0/0",
+      "isis_ipv6_enable": 1
+    },
+    {
+      "interface_name": "LoopBack1",
+      "isis_ipv6_enable": 1
+    }
+  ],
+  "vpn_instances": [
+    {
+      "name": "VRF_C",
+      "ipv4_family": {
+        "route_distinguisher": "100:3",
+        "vpn_targets": [
+          {
+            "value": "100:3",
+            "direction": "export"
+          },
+          {
+            "value": "100:1",
+            "direction": "import"
+          }
+        ]
+      }
+    }
+  ],
+  "interface_vpn_bindings": [
+    {
+      "interface_name": "GigabitEthernet1/0/1",
+      "vpn_instance_binding": "VRF_C"
+    }
+  ],
+  "bgp": {
+    "as_number": 100,
+    "router_id": "3.3.3.3",
+    "peers": [
+      {
+        "address": "2001:db8::1",
+        "remote_as": 100,
+        "connect_interface": "LoopBack1",
+        "families": ["vpnv4"]
+      }
+    ],
+    "vpn_instance_configs": [
+      {
+        "name": "VRF_C",
+        "family": "ipv4",
+        "import_route": "direct",
+        "peers": [
+          {
+            "address": "10.2.3.2",
+            "remote_as": 65003
+          }
+        ]
+      }
+    ]
+  },
+  "segment_routing_ipv6": {
+    "encapsulation_source_address": "2001:db8::3",
+    "locators": [
+      {
+        "name": "LOC_PE3",
+        "ipv6_prefix": "2001:db8:3000::/48",
+        "static_length": 64,
+        "opcodes": [
+          {
+            "sid_function": "::111",
+            "behavior": "end.psp"
+          },
+          {
+            "sid_function": "::3",
+            "behavior": "end.dt4",
+            "vpn_instance": "VRF_C"
+          }
+        ]
+      }
+    ]
+  },
+  "bgp_srv6_capabilities": {
+    "vpnv4_family": {
+      "peers": [
+        {
+          "address": "2001:db8::1",
+          "enable_prefix_sid": true
+        }
+      ]
+    },
+    "vpn_instance_configs": [
+      {
+        "name": "VRF_C",
+        "family": "ipv4",
+        "segment_routing_ipv6": {
+          "traffic_engineer": "best-effort",
+          "locator": "LOC_PE3"
+        }
+      }
+    ]
+  },
+  "isis_srv6_config": {
+    "process_id": 1,
+    "segment_routing_ipv6": {
+      "locator": "LOC_PE3",
+      "auto_sid_disable": true
+    }
+  },
+  "srv6_te_policies": [
+    {
+      "name": "POLICY_TO_PE1_CustB",
+      "endpoint": "2001:db8::1",
+      "color": 200,
+      "binding_sid": "2001:db8:3000::8888",
+      "candidate_paths": [
+        {
+          "preference": 100,
+          "segment_lists": [
+            {
+              "name": "SL_TO_PE1_VIA_P4",
+              "segments": [
+                { "index": 5, "sid": "2001:db8:7000::222" },
+                { "index": 10, "sid": "2001:db8:6000::222" },
+                { "index": 15, "sid": "2001:db8:1000::111" }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "traffic_steering_policies": {
+    "route_policies": [
+      {
+        "name": "RP_CUSTB_IMPORT",
+        "nodes": [
+          {
+            "id": 10,
+            "action": "permit",
+            "apply": {
+              "extcommunity_color": "200"
+            }
+          }
+        ]
+      }
+    ],
+    "bgp_peer_policy_applications": [
+      {
+        "family": "vpnv4",
+        "peer_address": "2001:db8::1",
+        "direction": "import",
+        "policy_name": "RP_CUSTB_IMPORT"
+      }
+    ],
+    "tunnel_policies": [
+      {
+        "name": "TP_CUSTB",
+        "selection_sequence": "ipv6 srv6-te-policy",
+        "load_balance_number": 1
+      }
+    ],
+    "vpn_instance_tunnel_applications": [
+      {
+        "vpn_instance": "VRF_C",
+        "family": "ipv4",
+        "policy_name": "TP_CUSTB"
+      }
+    ]
+  }
+}

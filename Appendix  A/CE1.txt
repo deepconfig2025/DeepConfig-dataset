@@ -1,0 +1,51 @@
+{
+  "hostname": "CE1",
+  "interfaces": {
+    "LoopBack1": {
+      "description": "Local network for CustA",
+      "ip_address": "192.168.1.1/32"
+    },
+    "LoopBack2": {
+      "description": "Local network for CustB",
+      "ip_address": "192.168.1.2/32"
+    },
+    "GigabitEthernet1/0/0": {
+      "description": "Link to PE1 for CustA",
+      "ip_address": "10.1.1.2 255.255.255.0"
+    },
+    "GigabitEthernet1/0/0.2": {
+      "description": "Link to PE1 for CustB",
+      "ip_address": "10.2.1.2 255.255.255.0"
+    }
+  },
+  "bgp": {
+    "as_number": 65001,
+    "router_id": "192.168.1.1",
+    "peers": [
+      {
+        "address": "10.1.1.1",
+        "remote_as": 100,
+        "description": "EBGP to PE1 for CustA"
+      },
+      {
+        "address": "10.2.1.1",
+        "remote_as": 100,
+        "description": "EBGP to PE1 for CustB"
+      }
+    ],
+    "ipv4_unicast": {
+      "networks": [
+        {
+          "network": "192.168.1.1",
+          "mask": 32,
+          "description": "CustA network"
+        },
+        {
+          "network": "192.168.1.2",
+          "mask": 32,
+          "description": "CustB network"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,1633 @@
+{
+  "vpn_network_intents": [
+    {
+      "pe_id": "PE1",
+      "vrf_name": "VRF_1",
+      "export_rt": [
+        "100:1"
+      ],
+      "import_rt": [
+        "200:1",
+        "300:1",
+        "400:1",
+        "500:1",
+        "600:1",
+        "700:1",
+        "800:1",
+        "900:1",
+        "1000:1",
+        "100:1"
+      ],
+      "import_route_filters": [
+        {
+          "prefix": "10.0.1.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "10.0.2.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "10.0.3.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "10.0.4.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "10.0.5.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "10.0.6.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "10.0.7.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "10.0.8.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "10.0.9.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "10.0.10.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "10.0.11.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "10.0.12.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "10.0.13.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "10.0.14.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "10.0.15.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "10.0.16.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "10.0.17.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "10.0.18.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "10.0.19.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "10.0.20.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "10.0.21.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "10.0.22.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "10.0.23.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "10.0.24.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "10.0.25.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "10.0.26.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "10.0.27.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "10.0.28.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "10.0.29.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "10.0.30.0",
+          "mask": 24,
+          "action": "deny"
+        }
+      ]
+    },
+    {
+      "pe_id": "PE2",
+      "vrf_name": "VRF_2",
+      "export_rt": [
+        "200:1"
+      ],
+      "import_rt": [
+        "100:1"
+      ],
+      "import_route_filters": [
+        {
+          "prefix": "20.0.1.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "20.0.2.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "20.0.3.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "20.0.4.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "20.0.5.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "20.0.6.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "20.0.7.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "20.0.8.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "20.0.9.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "20.0.10.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "20.0.11.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "20.0.12.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "20.0.13.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "20.0.14.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "20.0.15.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "20.0.16.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "20.0.17.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "20.0.18.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "20.0.19.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "20.0.20.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "20.0.21.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "20.0.22.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "20.0.23.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "20.0.24.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "20.0.25.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "20.0.26.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "20.0.27.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "20.0.28.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "20.0.29.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "20.0.30.0",
+          "mask": 24,
+          "action": "deny"
+        }
+      ]
+    },
+    {
+      "pe_id": "PE3",
+      "vrf_name": "VRF_3",
+      "export_rt": [
+        "300:1"
+      ],
+      "import_rt": [
+        "100:1"
+      ],
+      "import_route_filters": [
+        {
+          "prefix": "30.0.1.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "30.0.2.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "30.0.3.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "30.0.4.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "30.0.5.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "30.0.6.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "30.0.7.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "30.0.8.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "30.0.9.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "30.0.10.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "30.0.11.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "30.0.12.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "30.0.13.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "30.0.14.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "30.0.15.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "30.0.16.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "30.0.17.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "30.0.18.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "30.0.19.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "30.0.20.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "30.0.21.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "30.0.22.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "30.0.23.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "30.0.24.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "30.0.25.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "30.0.26.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "30.0.27.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "30.0.28.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "30.0.29.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "30.0.30.0",
+          "mask": 24,
+          "action": "deny"
+        }
+      ]
+    },
+    {
+      "pe_id": "PE4",
+      "vrf_name": "VRF_4",
+      "export_rt": [
+        "400:1"
+      ],
+      "import_rt": [
+        "100:1"
+      ],
+      "import_route_filters": [
+        {
+          "prefix": "40.0.1.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "40.0.2.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "40.0.3.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "40.0.4.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "40.0.5.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "40.0.6.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "40.0.7.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "40.0.8.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "40.0.9.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "40.0.10.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "40.0.11.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "40.0.12.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "40.0.13.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "40.0.14.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "40.0.15.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "40.0.16.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "40.0.17.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "40.0.18.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "40.0.19.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "40.0.20.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "40.0.21.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "40.0.22.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "40.0.23.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "40.0.24.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "40.0.25.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "40.0.26.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "40.0.27.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "40.0.28.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "40.0.29.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "40.0.30.0",
+          "mask": 24,
+          "action": "deny"
+        }
+      ]
+    },
+    {
+      "pe_id": "PE5",
+      "vrf_name": "VRF_5",
+      "export_rt": [
+        "500:1"
+      ],
+      "import_rt": [
+        "100:1"
+      ],
+      "import_route_filters": [
+        {
+          "prefix": "50.0.1.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "50.0.2.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "50.0.3.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "50.0.4.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "50.0.5.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "50.0.6.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "50.0.7.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "50.0.8.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "50.0.9.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "50.0.10.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "50.0.11.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "50.0.12.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "50.0.13.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "50.0.14.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "50.0.15.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "50.0.16.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "50.0.17.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "50.0.18.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "50.0.19.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "50.0.20.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "50.0.21.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "50.0.22.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "50.0.23.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "50.0.24.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "50.0.25.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "50.0.26.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "50.0.27.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "50.0.28.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "50.0.29.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "50.0.30.0",
+          "mask": 24,
+          "action": "deny"
+        }
+      ]
+    },
+    {
+      "pe_id": "PE6",
+      "vrf_name": "VRF_6",
+      "export_rt": [
+        "600:1"
+      ],
+      "import_rt": [
+        "100:1"
+      ],
+      "import_route_filters": [
+        {
+          "prefix": "60.0.1.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "60.0.2.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "60.0.3.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "60.0.4.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "60.0.5.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "60.0.6.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "60.0.7.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "60.0.8.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "60.0.9.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "60.0.10.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "60.0.11.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "60.0.12.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "60.0.13.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "60.0.14.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "60.0.15.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "60.0.16.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "60.0.17.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "60.0.18.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "60.0.19.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "60.0.20.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "60.0.21.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "60.0.22.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "60.0.23.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "60.0.24.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "60.0.25.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "60.0.26.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "60.0.27.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "60.0.28.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "60.0.29.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "60.0.30.0",
+          "mask": 24,
+          "action": "deny"
+        }
+      ]
+    },
+    {
+      "pe_id": "PE7",
+      "vrf_name": "VRF_7",
+      "export_rt": [
+        "700:1"
+      ],
+      "import_rt": [
+        "100:1"
+      ],
+      "import_route_filters": [
+        {
+          "prefix": "70.0.1.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "70.0.2.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "70.0.3.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "70.0.4.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "70.0.5.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "70.0.6.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "70.0.7.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "70.0.8.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "70.0.9.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "70.0.10.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "70.0.11.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "70.0.12.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "70.0.13.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "70.0.14.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "70.0.15.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "70.0.16.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "70.0.17.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "70.0.18.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "70.0.19.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "70.0.20.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "70.0.21.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "70.0.22.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "70.0.23.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "70.0.24.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "70.0.25.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "70.0.26.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "70.0.27.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "70.0.28.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "70.0.29.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "70.0.30.0",
+          "mask": 24,
+          "action": "deny"
+        }
+      ]
+    },
+    {
+      "pe_id": "PE8",
+      "vrf_name": "VRF_8",
+      "export_rt": [
+        "800:1"
+      ],
+      "import_rt": [
+        "100:1"
+      ],
+      "import_route_filters": [
+        {
+          "prefix": "80.0.1.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "80.0.2.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "80.0.3.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "80.0.4.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "80.0.5.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "80.0.6.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "80.0.7.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "80.0.8.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "80.0.9.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "80.0.10.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "80.0.11.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "80.0.12.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "80.0.13.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "80.0.14.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "80.0.15.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "80.0.16.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "80.0.17.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "80.0.18.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "80.0.19.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "80.0.20.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "80.0.21.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "80.0.22.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "80.0.23.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "80.0.24.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "80.0.25.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "80.0.26.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "80.0.27.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "80.0.28.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "80.0.29.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "80.0.30.0",
+          "mask": 24,
+          "action": "deny"
+        }
+      ]
+    },
+    {
+      "pe_id": "PE9",
+      "vrf_name": "VRF_9",
+      "export_rt": [
+        "900:1"
+      ],
+      "import_rt": [
+        "100:1"
+      ],
+      "import_route_filters": [
+        {
+          "prefix": "90.0.1.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "90.0.2.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "90.0.3.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "90.0.4.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "90.0.5.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "90.0.6.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "90.0.7.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "90.0.8.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "90.0.9.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "90.0.10.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "90.0.11.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "90.0.12.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "90.0.13.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "90.0.14.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "90.0.15.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "90.0.16.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "90.0.17.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "90.0.18.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "90.0.19.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "90.0.20.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "90.0.21.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "90.0.22.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "90.0.23.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "90.0.24.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "90.0.25.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "90.0.26.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "90.0.27.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "90.0.28.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "90.0.29.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "90.0.30.0",
+          "mask": 24,
+          "action": "deny"
+        }
+      ]
+    },
+    {
+      "pe_id": "PE10",
+      "vrf_name": "VRF_10",
+      "export_rt": [
+        "1000:1"
+      ],
+      "import_rt": [
+        "100:1"
+      ],
+      "import_route_filters": [
+        {
+          "prefix": "100.0.1.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "100.0.2.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "100.0.3.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "100.0.4.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "100.0.5.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "100.0.6.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "100.0.7.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "100.0.8.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "100.0.9.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "100.0.10.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "100.0.11.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "100.0.12.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "100.0.13.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "100.0.14.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "100.0.15.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "100.0.16.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "100.0.17.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "100.0.18.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "100.0.19.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "100.0.20.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "100.0.21.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "100.0.22.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "100.0.23.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "100.0.24.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "100.0.25.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "100.0.26.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "100.0.27.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "100.0.28.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "100.0.29.0",
+          "mask": 24,
+          "action": "deny"
+        },
+        {
+          "prefix": "100.0.30.0",
+          "mask": 24,
+          "action": "deny"
+        }
+      ]
+    }
+  ]
+}

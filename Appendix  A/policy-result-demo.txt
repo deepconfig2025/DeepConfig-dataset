@@ -1,0 +1,22 @@
+{
+  "route_policy": {
+    "name": "FILTER_10_0_1_0_24",
+    "nodes": [
+      {
+        "id": 10,
+        "mode": "deny",
+        "match": {
+          "prefix_list_v4": "BLOCK_10_0_1_0_24"
+        }
+      },
+      {
+        "id": 20,
+        "mode": "permit"
+      }
+    ]
+  },
+  "apply_to": {
+    "peer": "2001:db8::2",
+    "direction": "export"
+  }
+}

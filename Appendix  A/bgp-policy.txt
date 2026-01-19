@@ -1,0 +1,52 @@
+# The "Superset" Schema
+
+Please generate the output based on the "Superset Data Structure" defined below. This template covers all possible configuration options.
+
+**Rules:**
+1.  Select **only** the fields from the list below that are relevant to the user's intent.
+2.  **Do not** include fields with `null` values or fields that were not mentioned (keep the generated JSON concise).
+3.  If the user does not specify a `mode`, default to `permit`.
+4.  If the user does not specify a `node_id`, default to starting from 10 and incrementing by 10.
+
+## Match (Full Set of Match Criteria)
+- `community_filter`: (String) Name of the community filter
+- `prefix_list_v4`: (String) Name of the IPv4 prefix list
+- `prefix_list_v6`: (String) Name of the IPv6 prefix list
+- `as_path_filter`: (String) Name of the AS-Path regular expression filter
+- `interface`: (String) Interface name
+- `tag`: (Integer) Route tag value
+- `cost`: (Integer) Cost/Metric value
+
+## Action (Full Set of Execution Actions)
+- `extcommunity_color`: (String) SRv6 Color value (e.g., "100")
+- `local_preference`: (Integer) Local Preference value
+- `med`: (Integer) MED/Cost value
+- `ip_next_hop`: (String) Next-hop IP (supports "peer-address" or a specific IP)
+- `community`: (String) Set community attributes (e.g., "no-export", "65000:100")
+- `as_path_prepend`: (String) AS_Path prepend string (e.g., "65000 65000")
+- `extcommunity_rt`: (String) VPN Target value
+- `dampening`: (Boolean) Whether to enable route dampening
+
+# Output Format (Example)
+```json
+{
+  "route_policy": {
+    "name": "POLICY_NAME",
+    "nodes": [
+      {
+        "id": 10,
+        "mode": "permit",
+        "match": { 
+          // ...selected_match_fields... 
+        },
+        "action": { 
+          // ...selected_action_fields... 
+        }
+      }
+    ]
+  },
+  "apply_to": {  // Optional: Include only if the user specifies an application point
+    "peer": "IP_ADDRESS",
+    "direction": "import/export"
+  }
+}
